@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/commons/components/Navbar";
-import SocialMedialNavBar from "@/commons/components/SocialMediaNavBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,12 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cabinetGrotesk.className} flex w-full bg-white`}>
-        <div className="flex flex-col justify-center items-center w-[20%] h-screen">
+      <body className={`${cabinetGrotesk.className} flex w-full bg-white min-h-screen`}>
+        <div className="flex flex-col items-center w-[20%] min-h-screen sticky mt-[30vh]">
           <Navbar />
-          <SocialMedialNavBar/>
         </div>
-        <div className="w-[80%]">{children}</div>
+        <div className="w-[80%] min-h-screen overflow-scroll">{children}</div>
       </body>
     </html>
   );

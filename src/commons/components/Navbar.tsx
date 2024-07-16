@@ -14,6 +14,8 @@ import {
   IconCode,
   IconUser,
   IconMail,
+  IconBrandX,
+  IconBrandDribbble,
 } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -46,7 +48,7 @@ const Navbar = () => {
   return (
     <div
     className={`flex flex-col  justify-center items-center w-full  sticky top-0 z-50 ${open && "h-screen"
-      }  shrink-0 transition-all duration-300 bg-gradient-to-b bg-purple-blue px-5 md:px-7 md:pt-10 text-white font-normal`}
+      }  shrink-0 transition-all duration-300 px-5 md:px-7 md:pt-10 text-white font-normal`}
     >
       
       {/* <div className="lg:hidden flex justify-between items-center text-white mt-3 px-5">
@@ -158,6 +160,43 @@ const Navbar = () => {
             <IconMail className=" text-black mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0"
             />{" "}
            
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col h-full rounded-full py-8 px-3 w-16 mt-20  shadow-custom">
+        <div className="space-y-3 w-full">
+          <div
+            onClick={() => setOpen(false)}
+            className={`${navItemStyle}`}
+          >
+
+            <IconBrandX className="text-black mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0"/>
+
+            
+          </div>
+
+          {/* for desktop */}
+
+          <div className="hidden lg:block">
+            <div
+              className={`${navItemStyle}`}
+            >
+              <IconBrandDribbble className="text-black mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0" />{" "}
+              
+            </div>
+          </div>
+
+          {/* for mobile */}
+          <div
+           
+            className={` lg:hidden flex lg:flex-col py-3 lg:py-2  rounded-lg cursor-pointer text-[15px] items-start justify-between lg:items-center lg:justify-center mx-5 lg:mx-0`}
+          >
+            <div className="flex">
+              {/* <Student size={20} className="mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0" />{" "} */}
+              Student
+            </div>
+            
           </div>
         </div>
       </div>

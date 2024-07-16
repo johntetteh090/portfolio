@@ -1,3 +1,6 @@
+import AboutMyself from "@/commons/components/AboutMyself";
+import Projects from "@/commons/components/Projects";
+import SocialsBtns from "@/commons/components/SocialsBtns";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,11 +13,29 @@ export default function Home() {
         <p>Available for hire</p>
       </div>
       <div className="text-[4rem] font-bold">
-        <p className=" ">Hey, I{"'"}m Johnny</p>
-        <p className="">a <span className="text-[#B0B0B0]">Web and Mobile frontend </span></p>
-        <p className="text-[#B0B0B0]">developer and</p>
+        <p>Hey, I{"'"}m John Kennedy</p>
+        <p>Martey Tetteh a <span className="text-[#B0B0B0]">Web and</span></p>
+        <p className=""> <span className="text-[#B0B0B0]">Mobile frontend developer,</span></p>
+        <p className="text-[#B0B0B0]"> UI/UX designer and Dev Ops </p>
+
+        
+        <div className="flex items-center">
+        <div className="text-[#B0B0B0]"> engineer</div>
+        <div className="h-3 w-3 rounded-full bg-[#d9d9d9] mt-7"></div>
+        </div>
+        
       </div>
+      <SocialsBtns/>
+      <AboutMyself/>
+
+      <div className="mt-10 h-0.5 bg-[#d9d9d9] rounded-full"/>
+
+      <Projects/>
+
+     
       </div>
+
+     
      
 
       
