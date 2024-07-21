@@ -15,7 +15,10 @@ const config: Config = {
       },
       colors: {
         secondary: "#7B88FD"
-      }
+      },
+      backgroundImage: theme => ({
+        'tools-gradient': 'linear-gradient(to bottom, rgba(222, 224, 249, 0.1) 80%, #DEE0F9 90%)'
+      })
     },
   },
   plugins: [require('daisyui'),],

@@ -1,13 +1,15 @@
 import AboutMyself from "@/commons/components/AboutMyself";
 import Projects from "@/commons/components/Projects";
 import SocialsBtns from "@/commons/components/SocialsBtns";
+import ToolsAndSkills from "@/commons/components/ToolsAndSkills";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center w-full">
+    <main className="flex min-h-screen flex-col items-center justify-center w-full mb-6">
 
       <div>
+      <section id="main-content">
       <div className="flex items-center justify-start ">
         <div className="h-2 w-2 bg-[#2BE868] rounded-full mr-2" />
         <p>Available for hire</p>
@@ -27,10 +29,17 @@ export default function Home() {
       </div>
       <SocialsBtns/>
       <AboutMyself/>
+      </section>
 
       <div className="mt-10 h-0.5 bg-[#d9d9d9] rounded-full"/>
 
+      <section id="feed">
       <Projects/>
+      </section>
+
+      <section id="tools&skills">
+        <ToolsAndSkills/>
+      </section>
 
      
       </div>

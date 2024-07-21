@@ -35,11 +35,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cabinetGrotesk.className} flex w-full bg-white min-h-screen`}>
-        <div className="flex flex-col items-center w-[20%] min-h-screen sticky mt-[30vh]">
-          <Navbar />
+      <body className={`${cabinetGrotesk.className} min-h-screen bg-white`}>
+        <div className="flex h-screen">
+          <div className="fixed top-0 left-0 w-[20%] h-full flex flex-col justify-center items-center ">
+            <Navbar />
+          </div>
+
+          <div className="ml-[20%] w-[80%] h-screen overflow-y-scroll">
+            {children}
+          </div>
         </div>
-        <div className="w-[80%] min-h-screen overflow-scroll">{children}</div>
       </body>
     </html>
   );
