@@ -1,4 +1,6 @@
+import AboutMeAndAccomplishments from "@/commons/components/AboutMeAndAccomplishments";
 import AboutMyself from "@/commons/components/AboutMyself";
+import Footer from "@/commons/components/Footer";
 import Projects from "@/commons/components/Projects";
 import SocialsBtns from "@/commons/components/SocialsBtns";
 import ToolsAndSkills from "@/commons/components/ToolsAndSkills";
@@ -39,6 +41,14 @@ export default function Home() {
 
       <section id="tools&skills">
         <ToolsAndSkills/>
+      </section>
+
+      <section id="aboutMe">
+        <AboutMeAndAccomplishments/>
+      </section>
+
+      <section id="footer">
+        <Footer/>
       </section>
 
      

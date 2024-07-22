@@ -18,7 +18,16 @@ const config: Config = {
       },
       backgroundImage: theme => ({
         'tools-gradient': 'linear-gradient(to bottom, rgba(222, 224, 249, 0.1) 80%, #DEE0F9 90%)'
-      })
+      }),
+      animation: {
+        'rotate-360': 'rotate-360 2s linear infinite',
+      },
+      keyframes: {
+        'rotate-360': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
     },
   },
   plugins: [require('daisyui'),],
