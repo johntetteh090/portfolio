@@ -1,10 +1,19 @@
 "use client";
 
-import { IconMailFilled, IconPhoneFilled } from "@tabler/icons-react";
+import {
+  IconBrandDribbble,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandX,
+  IconCopyright,
+  IconMailFilled,
+  IconPhoneFilled,
+} from "@tabler/icons-react";
 import React from "react";
 import handleEmailClick from "../hooks/EmailHook";
 import Link from "next/link";
 import TextInput from "./TextInput";
+import FooterForm from "./FooterForm";
 
 interface FooterProps {
   feedRef: React.RefObject<HTMLElement>;
@@ -22,7 +31,7 @@ export default function Footer({
   };
 
   return (
-    <div className="rounded-xl bg-[#FBFBFB] py-5 px-6 mt-16">
+    <div className="rounded-xl bg-[#FBFBFB] py-5 px-10 mt-16">
       <div className="flex justify-between">
         <div className="text-black">
           <p className="font-bold text-[18px]">Contact</p>
@@ -59,9 +68,53 @@ export default function Footer({
         </div>
       </div>
 
-      <div className="mt-10 h-10">
-        <TextInput 
-        placeholder="Found something interesting?"/>
+      
+
+      {/* <div className="relative mt-10">
+        <input
+          type="text"
+          className="w-full py-3 px-3 rounded-xl font-light text-black/70  bg-white focus:border-secondary text-[16px] pr-[9rem]"
+          placeholder="Found something interesting?"
+        />
+        <div className="absolute inset-y-0 right-0 flex items-center pl-3 pointer-events-none">
+          <div className="bg-[#313133] rounded-tr-lg rounded-br-lg py-3 px-8 text-white">
+            Email Me
+          </div>
+        </div>
+      </div> */}
+
+      <FooterForm/>
+
+      <div className="mt-10 h-0.5 w-full bg-[#B0B0B0]" />
+
+      <div className="flex mt-10 justify-between">
+        <div>
+          <div className="flex space-x-6">
+            <p>Privacy Policy </p>
+            <p>Terms of use</p>
+          </div>
+
+          <div className="flex space-x-2 mt-6">
+            <IconCopyright />
+            <p>Copyrights. All rights reserved.</p>
+          </div>
+        </div>
+
+        <div className="flex space-x-2">
+          <div className="rounded-full  bg-black h-7 w-7 hover:h-8 hover:w-8 flex justify-center items-center cursor-pointer">
+            <IconBrandX size={18} className="text-white" />
+          </div>
+          <div className="rounded-full  bg-black h-7 w-7 hover:h-8 hover:w-8 flex justify-center items-center cursor-pointer">
+            <IconBrandInstagram size={18} className="text-white" />
+          </div>
+          <div className="rounded-full  bg-black h-7 w-7 hover:h-8 hover:w-8 flex justify-center items-center cursor-pointer">
+            <IconBrandLinkedin size={18} className="text-white" />
+          </div>
+
+          <div className="rounded-full  bg-black h-7 w-7 hover:h-8 hover:w-8 flex justify-center items-center cursor-pointer">
+            <IconBrandDribbble size={18} className="text-white" />
+          </div>
+        </div>
       </div>
     </div>
   );

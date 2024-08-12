@@ -21,11 +21,21 @@ const config: Config = {
       }),
       animation: {
         'rotate-360': 'rotate-360 2s linear infinite',
+        wobble: 'wobble 3s ease-in-out infinite',
       },
       keyframes: {
         'rotate-360': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
+        },
+
+        wobble: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '15%': { transform: 'translateX(-3px) rotate(-9deg)' },
+          '30%': { transform: 'translateX(3px) rotate(9deg)' },
+          '45%': { transform: 'translateX(-3px) rotate(-9deg)' },
+          '60%': { transform: 'translateX(3px) rotate(9deg)' },
+          '75%': { transform: 'translateX(-3px) rotate(-9deg)' },
         },
       },
     },

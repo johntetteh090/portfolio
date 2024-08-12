@@ -7,9 +7,10 @@ interface Props{
     removeBar?:boolean
     width?:string;
     height?:string
+    marginLeft?:string
 }
 
-export default function Skills({image,name,removeBar = false,width,height} : Props) {
+export default function Skills({image,name,removeBar = false,width,height,marginLeft = "ml-8"} : Props) {
   return (
 
     <div className='flex justify-center items-center'>
@@ -18,12 +19,12 @@ export default function Skills({image,name,removeBar = false,width,height} : Pro
           height={85}
           width={85}
           alt=""
-          className={`rounded-xl  w-[32px] h-[32px] ${width} ${height} mr-4`}
+          className={`rounded-xl  w-[32px] h-[32px] ${width} ${height} mr-4 animate-wobble`}
         />
         <p>{name}</p>
 
         {
-            !removeBar && <div className='w-0.5 h-5 bg-black/60 ml-8'/>
+            !removeBar && <div className={`w-0.5 h-5 bg-black/60 ${marginLeft}`}/>
         }
         
 
