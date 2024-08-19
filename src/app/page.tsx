@@ -23,19 +23,25 @@ export default function Home() {
       <div className="mt-[23rem]">
       <section id="main-content">
       <div className="flex items-center justify-start ">
-        <div className="h-2 w-2 bg-[#2BE868] rounded-full mr-2" />
-        <p>Available for hire</p>
+        <div className="h-2 w-2 bg-[#2BE868] rounded-full mr-2 animate-dot_bounce" />
+        <div className="h-7  overflow-hidden">
+        <p className="animate-combinedAnimation leading-0">Available for hire</p>
+        </div>
+        
       </div>
-      <div className="text-[4rem] font-bold">
+      <div className="text-[4rem] font-bold ">
         <p>Hey, I{"'"}m John Kennedy</p>
-        <p>Martey Tetteh a <span className="text-[#B0B0B0]">Web and</span></p>
-        <p className=""> <span className="text-[#B0B0B0]">Mobile frontend developer,</span></p>
-        <p className="text-[#B0B0B0]"> UI/UX designer and Dev Ops </p>
+        <p className="h-20  overflow-hidden">Martey Tetteh a <span className="text-[#B0B0B0] inline-block animate-slideUp ">Web and</span></p>
+        <p className="h-20  overflow-hidden"> <span className="text-[#B0B0B0] inline-block animate-slideUp1">Mobile frontend developer,</span></p>
+        <div className="h-20  overflow-hidden">
+        <p className="text-[#B0B0B0] animate-slideUp2"> UI/UX designer and Dev Ops </p>
+        </div>
+        
 
         
         <div className="flex items-center">
-        <div className="text-[#B0B0B0]"> engineer</div>
-        <div className="h-3 w-3 rounded-full bg-[#d9d9d9] mt-7"></div>
+        <div className="text-[#B0B0B0] overflow-hidden"> <p className="animate-slideUp3">engineer</p></div>
+        <div className="h-3 w-3 rounded-full bg-[#d9d9d9] mt-7 animate-grey_dot"></div>
         </div>
         
       </div>

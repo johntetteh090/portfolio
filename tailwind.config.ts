@@ -19,10 +19,7 @@ const config: Config = {
       backgroundImage: theme => ({
         'tools-gradient': 'linear-gradient(to bottom, rgba(222, 224, 249, 0.1) 80%, #DEE0F9 90%)'
       }),
-      animation: {
-        'rotate-360': 'rotate-360 2s linear infinite',
-        wobble: 'wobble 3s ease-in-out infinite',
-      },
+      
       keyframes: {
         'rotate-360': {
           '0%': { transform: 'rotate(0deg)' },
@@ -37,6 +34,68 @@ const config: Config = {
           '60%': { transform: 'translateX(3px) rotate(9deg)' },
           '75%': { transform: 'translateX(-3px) rotate(-9deg)' },
         },
+
+        bounceInRotate: {
+          '0%': {
+            transform: 'translateY(100%) rotateY(-45deg)',
+            opacity: '0',
+          },
+          '60%': {
+            transform: 'translateY(0) rotateX(0deg)',
+            opacity: '1',
+          },
+          '80%': {
+            transform: 'translateY(-15%)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
+        bounce: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '25%': {
+            transform: 'translateY(-80%)',
+          },
+          '50%': {
+            transform: 'translateY(35%)',
+          },
+          '75%': {
+            transform: 'translateY(-35%)',
+          },
+        },
+        dot_bounce: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '25%': {
+            transform: 'translateY(-650%)',
+          },
+          '50%': {
+            transform: 'translateY(35%)',
+          },
+          '75%': {
+            transform: 'translateY(-35%)',
+          },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        
+      },
+      animation: {
+        'rotate-360': 'rotate-360 2s linear infinite',
+        wobble: 'wobble 3s ease-in-out infinite',
+        combinedAnimation: 'bounceInRotate 1s ease-out, bounce 0.8s ease-out 1 1s',
+        dot_bounce: 'dot_bounce 1.5s ease-out 3 ',
+        grey_dot: 'dot_bounce 1.5s ease-out 2 ',
+        slideUp: ' slideUp 0.7s ease-in-out',
+        slideUp1: ' slideUp 0.7s ease-in-out 0.5s',
+        slideUp2: ' slideUp 0.7s ease-in-out 0.9s',
+        slideUp3: ' slideUp 0.7s ease-in-out 1.1s',
+
       },
     },
   },
