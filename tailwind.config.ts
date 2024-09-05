@@ -11,7 +11,6 @@ const config: Config = {
     extend: {
       boxShadow: {
         'custom': '8px 8px 15px 45px rgba(250, 250, 250, 0.35)', // light shadow with #FAFAFA color
-        
       },
       colors: {
         secondary: "#7B88FD"

@@ -1,9 +1,14 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 
-export default function Projects() {
+interface Props{
+  modalVisible?:() => void
+  modalImages?: (data: string[]) => void;
+}
+
+export default function Projects({modalVisible,modalImages} : Props) {
   return (
-    <section id="feed">
+    <section id="feed" className="relative">
       <div className="mt-8">
         <p className="text-[40px] font-bold text-black">My Feeds</p>
 
@@ -13,12 +18,14 @@ export default function Projects() {
             description={"description"}
             appLink={"http://schoolproject.atlanticshipping.org/"}
             images={["/images/school_website/image1.png"]}
+            modalVisible={modalVisible}
+            modalImages={(images) => (modalImages) && modalImages(images)}
           />
           <ProjectCard
-            appName={"School Website"}
+            appName={"Ecoville"}
             description={"description"}
             appLink={"http://schoolproject.atlanticshipping.org/"}
-            images={["/images/school_website/image1.png"]}
+            images={["/images/ecoville/ecoville1.png"]}
           />
           <ProjectCard
             appName={"School Website"}
@@ -100,6 +107,9 @@ export default function Projects() {
           />
         </div>
       </div>
+
+     
+      
     </section>
   );
 }

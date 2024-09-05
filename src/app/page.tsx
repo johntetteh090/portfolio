@@ -4,11 +4,12 @@
 import AboutMeAndAccomplishments from "@/commons/components/AboutMeAndAccomplishments";
 import AboutMyself from "@/commons/components/AboutMyself";
 import Footer from "@/commons/components/Footer";
+import ImagesModal from "@/commons/components/ImagesModal";
 import Projects from "@/commons/components/Projects";
 import SocialsBtns from "@/commons/components/SocialsBtns";
 import ToolsAndSkills from "@/commons/components/ToolsAndSkills";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
   // items-center justify-center
@@ -16,6 +17,15 @@ export default function Home() {
   const feedRef = useRef(null);
   const skillsRef = useRef(null);
   const aboutMe = useRef(null);
+
+  const [modalVisible,setModalVisible] = useState(false)
+  const [modalImages,setModalImages] = useState<string[]>([])
+
+
+    function handleModalVisible (){
+
+      setModalVisible(!modalVisible)
+  }
   
   return (
     <main className="flex min-h-screen flex-col items-center w-full mb-6">
@@ -52,7 +62,9 @@ export default function Home() {
       <div className="mt-10 h-0.5 bg-[#d9d9d9] rounded-full"/>
 
       <section ref={feedRef} id="feed">
-      <Projects/>
+      <Projects 
+      modalVisible={() => handleModalVisible()}
+      modalImages={(images) => setModalImages(images)}/>
       </section>
 
       <section ref={skillsRef} id="tools&skills">
@@ -71,9 +83,14 @@ export default function Home() {
       </div>
 
      
-     
+     {
+      modalVisible && <ImagesModal/>
+     }
+      
 
       
     </main>
   );
 }
+
+
