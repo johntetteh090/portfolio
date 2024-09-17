@@ -1,23 +1,35 @@
 // components/Carousel.js
 
-'use client'
+"use client";
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IconChevronLeft, IconCircleArrowLeft, IconCircleChevronLeft } from "@tabler/icons-react";
+import {
+  IconChevronLeft,
+  IconChevronRight,
+  IconCircleArrowLeft,
+  IconCircleChevronLeft,
+  IconCircleChevronRight,
+} from "@tabler/icons-react";
 import Image from "next/image";
+import * as Avatar from "@radix-ui/react-avatar";
 
-const Carousel = () => {
+interface Props {
+  images: string[];
+}
+
+const Carousel = ({ images }: Props) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 20000,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
+    autoplay: false,
+    autoplaySpeed: 1000,
     horizontal: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -50,56 +62,52 @@ const Carousel = () => {
     }
   };
   return (
+    <div className=" flex h-[80%] w-full">
+      <div className="flex flex-col items-center justify-center">
+        <button
+          onClick={handlePrev}
+          className="hover:bg-gray-50/10 rounded-full hidden lg:block ml-10 mr-10 py-2 px-2"
+        >
+          <IconChevronLeft stroke={1.5} size={60} className="text-black/50" />
+        </button>
+      </div>
 
-    <div className=" flex  h-full w-full  items-center">
-    <button onClick={handlePrev} className="hover:bg-gray-50/10 rounded-full p-2 hidden lg:block">
-      <IconCircleChevronLeft stroke={1.5} size={40} className="text-[#EE6B15] mr-6 ml-10 " />
-    </button>
+      <div className="w-[80%] h-[80%] bg-red-500">
+        <Slider {...settings} ref={carouselRef} className="rounded-xl">
+          {images.map((image, index) => (
+            <Avatar.Root key={index}>
+              <Avatar.Image
+                key={index}
+                src={image}
+                alt="hero"
+                className={`rounded-xl w-full h-[80vh] object-contain`}
+              />
 
-    <div className="w-[80%] h-[80%] bg-red-500">
-    <Slider {...settings} ref={carouselRef} className="rounded-xl">
+              <Avatar.Fallback
+                key={index}
+                className=" w-full h-full bg-black/60 animate-pulse "
+              ></Avatar.Fallback>
+            </Avatar.Root>
+            
+          ))}
 
-    <Image
-           src="/images/school_website/image1.png"
-          alt="image"
-          width={100}
-          height={100}
-          className="rounded-tl-xl rounded-tr-xl h-full w-full object-fill"
-        />
-     
-     <Image
-           src="/images/school_website/image2.png"
-          alt="image"
-          width={100}
-          height={100}
-          className="rounded-tl-xl rounded-tr-xl h-full w-full"
-        />
-         {/* <Image
-          src="/images/ecoville/ecoville2.png"
-          height={85}
-          width={85}
-          alt="fdgjfhg"
-          className="rounded-xl w-full object-cover"
-        />  */}
-         {/* <Image
-          src={"/images/school_website/image3.png"}
-          height={85}
-          width={85}
-          alt=""
-          className="rounded-xl w-full object-cover"
-        />  */}
-      {/* Add more slides as needed */}
-    </Slider>
+          {/* Add more slides as needed */}
+        </Slider>
+      </div>
+
+      <div className="flex felx-col justify-center items-center">
+        <button
+          onClick={handleNext}
+          className="hover:bg-gray-50/10 rounded-full hidden lg:block ml-10 py-2 px-2"
+        >
+          <IconChevronRight
+            stroke={1.5}
+            size={60}
+            className="text-black/50  "
+          />
+        </button>
+      </div>
     </div>
-
-    <button onClick={handleNext} className="hover:bg-gray-50/10 rounded-full p-2 hidden lg:block">
-      <IconCircleChevronLeft stroke={1.5} size={40} className="text-[#EE6B15] mr-6 ml-10 " />
-    </button>
-    
-  </div>
-
-    
- 
   );
 };
 

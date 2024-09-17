@@ -68,21 +68,6 @@ export default function Footer({
         </div>
       </div>
 
-      
-
-      {/* <div className="relative mt-10">
-        <input
-          type="text"
-          className="w-full py-3 px-3 rounded-xl font-light text-black/70  bg-white focus:border-secondary text-[16px] pr-[9rem]"
-          placeholder="Found something interesting?"
-        />
-        <div className="absolute inset-y-0 right-0 flex items-center pl-3 pointer-events-none">
-          <div className="bg-[#313133] rounded-tr-lg rounded-br-lg py-3 px-8 text-white">
-            Email Me
-          </div>
-        </div>
-      </div> */}
-
       <FooterForm/>
 
       <div className="mt-10 h-0.5 w-full bg-[#B0B0B0]" />

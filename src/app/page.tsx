@@ -28,7 +28,7 @@ export default function Home() {
   }
   
   return (
-    <main className="flex min-h-screen flex-col items-center w-full mb-6">
+    <main className="flex min-h-screen flex-col  items-center w-full mb-6 ">
 
       <div className="mt-[23rem]">
       <section id="main-content">
@@ -84,7 +84,9 @@ export default function Home() {
 
      
      {
-      modalVisible && <ImagesModal/>
+      modalVisible && <ImagesModal 
+      showImages={() => handleModalVisible()} 
+      images={modalImages}/>
      }
       
 

@@ -31,14 +31,15 @@ function handleClick(){
   modalImages(images)
 }
   return (
-    <div className="relative">
+    <div className="relative lg:max-w-[18rem]">
       <div className="rounded-xl bg-white shadow-custom py-5 px-4 mb-6">
         <div className=" border border-[#D9D9D9] rounded-xl p-2 inline-block">
           <p className="font-light">Project</p>
         </div>
 
         <p className="font-bold text-[18px] mt-5">{appName}</p>
-        <p className="text-[14px] text-black/60 mt-1 mb-2">{description}</p>
+        <p className="text-[14px] text-black/60 mt-1 mb-2 line-clamp-4">{description}</p>
+        <p className="mt-1 mb-2 text-[14px] text-black/50">- BenchFive LLC</p>
 
         <a
           href={appLink}
@@ -72,12 +73,6 @@ function handleClick(){
             </div>
           </div>
         </div>
-
-        {/* <Carousel/> */}
-
-        {/* <div className="absolute z-10 bg-black/30 h-full w-full">
-jhkjhbjlkhbjh
-      </div> */}
       </div>
     </div>
   );
