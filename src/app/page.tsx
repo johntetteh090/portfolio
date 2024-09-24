@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col  items-center w-full mb-6 ">
 
-      <div className="mt-[23rem]">
+      <div className="mt-[23rem] lg:max-w-[44rem] 2xl:max-w-[65rem] bg-red-500">
       <section id="main-content">
       <div className="flex items-center justify-start ">
         <div className="h-2 w-2 bg-[#2BE868] rounded-full mr-2 animate-dot_bounce" />
@@ -39,11 +39,12 @@ export default function Home() {
         </div>
         
       </div>
-      <div className="text-[4rem] font-bold ">
+      <div className="lg:text-[3.5rem] 2xl:text-[4rem] font-bold ">
         <p>Hey, I{"'"}m John Kennedy</p>
-        <p className="h-20  overflow-hidden">Martey Tetteh a <span className="text-[#B0B0B0] inline-block animate-slideUp ">Web and</span></p>
-        <p className="h-20  overflow-hidden"> <span className="text-[#B0B0B0] inline-block animate-slideUp1">Mobile frontend developer,</span></p>
-        <div className="h-20  overflow-hidden">
+        
+        <p className="h-20 overflow-hidden">Martey Tetteh a <span className="text-[#B0B0B0] inline-block animate-slideUp ">Web and</span></p>
+        <p className="h-20 overflow-hidden"> <span className="text-[#B0B0B0] inline-block animate-slideUp1">Mobile frontend developer,</span></p>
+        <div className="h-20 overflow-hidden">
         <p className="text-[#B0B0B0] animate-slideUp2"> UI/UX designer and Dev Ops </p>
         </div>
         
@@ -55,6 +56,7 @@ export default function Home() {
         </div>
         
       </div>
+
       <SocialsBtns/>
       <AboutMyself/>
       </section>
@@ -67,7 +69,7 @@ export default function Home() {
       modalImages={(images) => setModalImages(images)}/>
       </section>
 
-      <section ref={skillsRef} id="tools&skills">
+      <section ref={skillsRef} id="feed">
         <ToolsAndSkills/>
       </section>
 

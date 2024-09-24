@@ -12,7 +12,7 @@ export default function Projects({modalVisible,modalImages} : Props) {
       <div className="mt-8">
         <p className="text-[40px] font-bold text-black">My Feeds</p>
 
-        <div className="mt-10 grid grid-cols-3 gap-6">
+        <div className="mt-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
           <ProjectCard
             appName={"School Website"}
             description={

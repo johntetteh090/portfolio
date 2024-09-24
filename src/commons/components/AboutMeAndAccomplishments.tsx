@@ -25,7 +25,10 @@ export default function AboutMeAndAccomplishments() {
       </div>
 
       <div className="text-black/60 mt-10">
-        <p>
+      I am a dedicated and passionate software developer with over five
+          years of professional experience in both mobile and web development.My expertise spans across Flutter,
+          Next.js, allows me to create dynamic, responsive, and visually appealing applications.
+        {/* <p>
           I am a dedicated and passionate software developer with over five
           years of professional experience
         </p>
@@ -33,7 +36,7 @@ export default function AboutMeAndAccomplishments() {
           in both mobile and web development.My expertise spans across Flutter,
           Next.js, allows me to create
         </p>
-        <p>dynamic, responsive, and visually appealing applications.</p>
+        <p>dynamic, responsive, and visually appealing applications.</p> */}
       </div>
 
       <div className="mt-7 text-black/60">

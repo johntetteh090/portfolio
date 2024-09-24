@@ -274,12 +274,22 @@ const Navbar = () => {
             </a>
           
         
-          <a href="#section3" onClick={() => setOpen(false)} className={`${activeSection === 'section3' && selectedStyle} ${navItemStyle}`}>
-            <IconUser className="text-black mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0" />
+          <a href="#aboutMe" onClick={() => setOpen(false)} className={`${activeSection === 'aboutMe' && selectedStyle} ${navItemStyle}`}>
+          {
+                activeSection === 'aboutMe' ? 
+                <IconUser className={`${iconFocusProp}`} /> :
+                <IconUser className={`${iconUnfocusProp}`} />
+              }
+                        </a>
+          <a href="#footer" onClick={() => setOpen(false)} className={`${activeSection === 'footer' && selectedStyle} ${navItemStyle}`}>
+            {/* <IconMail className="text-black mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0"/> */}
+            
+            {
+                activeSection === 'footer' ? 
+                <IconMail  className={`${iconFocusProp}`} /> :
+                <IconMail  className={`${iconUnfocusProp}`} />
+              }
           </a>
-          <div onClick={() => setOpen(false)} className={`${pathname.includes("discounts") && selectedStyle} ${navItemStyle}`}>
-            <IconMail className="text-black mb-1 mr-3 ml-2 lg:ml-0 lg:mr-0"/>
-          </div>
         </div>
       </div>
       <div className="flex flex-col h-full rounded-full py-8 px-3 w-16 mt-20 shadow-custom">
