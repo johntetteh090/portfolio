@@ -3,9 +3,14 @@
 import { motion } from "framer-motion";
 import { IconPhone, IconMenu2, IconX } from "@tabler/icons-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
+  const isAboutPage = pathname === "/about";
 
   return (
     <motion.nav
@@ -29,16 +34,24 @@ export default function Navbar() {
           {/* Desktop Navigation Links - Centered */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <motion.a
-              href="#home"
-              className="text-[#296d6e] font-bold transition-colors duration-200 text-xs lg:text-sm"
+              href="/"
+              className={`transition-colors duration-200 text-xs lg:text-sm ${
+                isHomePage 
+                  ? "text-[#296d6e] font-bold" 
+                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+              }`}
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               Home
             </motion.a>
             <motion.a
-              href="#about"
-              className="text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal text-xs lg:text-sm"
+              href="/about"
+              className={`transition-colors duration-200 text-xs lg:text-sm ${
+                isAboutPage 
+                  ? "text-[#296d6e] font-bold" 
+                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+              }`}
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -85,8 +98,12 @@ export default function Navbar() {
         >
           <div className="py-4 space-y-4 border-t border-[#296d6e]/20 mt-4">
             <motion.a
-              href="#home"
-              className="block text-[#296d6e] font-bold transition-colors duration-200 text-center text-sm"
+              href="/"
+              className={`block transition-colors duration-200 text-center text-sm ${
+                isHomePage 
+                  ? "text-[#296d6e] font-bold" 
+                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+              }`}
               onClick={() => setIsMenuOpen(false)}
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -94,8 +111,12 @@ export default function Navbar() {
               Home
             </motion.a>
             <motion.a
-              href="#about"
-              className="block text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal text-center text-sm"
+              href="/about"
+              className={`block transition-colors duration-200 text-center text-sm ${
+                isAboutPage 
+                  ? "text-[#296d6e] font-bold" 
+                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+              }`}
               onClick={() => setIsMenuOpen(false)}
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}

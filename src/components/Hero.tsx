@@ -6,16 +6,18 @@ import { IconArrowRight } from "@tabler/icons-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-[#f8f7f2] py-8 overflow-hidden">
-      {/* Desktop: image at bottom center */}
-      <div className="hidden md:block absolute left-1/2 bottom-0 z-0" style={{ transform: 'translateX(-50%)' }}>
+    <section className="relative w-full bg-[#f8f7f2] pt-8 pb-10 overflow-hidden">
+      
+{/* Desktop: image at bottom center */}
+<div className="hidden md:block absolute left-1/2 bottom-0 z-0" 
+      style={{ transform: 'translateX(-50%)' }}>
         <Image
           src="/images/my_image.png"
           alt="Hero background"
           width={400}
           height={700}
-          className="object-cover rounded-none"
-          priority
+          className="object-cover rounded-none overflow-hidden"
+          
         />
       </div>
       {/* Mobile: image on top */}
@@ -30,22 +32,22 @@ export default function Hero() {
         />
       </div>
       {/* Overlayed text content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-stretch w-full max-w-[2600px] mx-auto min-h-[600px] md:min-h-[80vh]">
+      <div className="relative z-10 flex flex-col md:flex-row items-stretch w-full max-w-[2600px]">
         {/* Left: Name/title/subtitle */}
-        <div className=" max-w-2xl relative flex flex-col justify-center md:flex-[2] md:items-start md:text-left text-left pl-4 pr-8 md:pl-10 lg:px-10 w-full mb-8 z-10">
+        <div className=" md:w-[50%] relative flex flex-col justify-center md:items-start md:text-left text-left pl-4 md:pl-[11%] 2xl:pl-[20%] mb-8 z-10 sm:mr-10 lg:mr-0">
           {/* Green horizontal line */}
           <motion.div 
-            className="w-24 h-1 bg-[#296d6e] mb-4"
+            className="w-24 h-1 bg-[#296d6e] mb-4 "
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           />
-          <div className="text-4xl md:text-6xl font-bold text-[#296d6e] mb-4 text-left w-full">
+          <div className="text-4xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-[#296d6e] mb-4 text-left w-full lg:w-fit">
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-              className="w-full"
+              // className="w-full"
             >
               I&apos;m John Kennedy,
             </motion.div>
@@ -59,7 +61,7 @@ export default function Hero() {
             </motion.div>
           </div>
           <motion.p 
-            className="text-sm md:text-base text-[#081b21]/50 w-full leading-relaxed"
+            className="text-sm md:text-base text-[#081b21]/50 w-full lg:w-[90%] leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 1.3, ease: "easeOut" }}
@@ -86,7 +88,7 @@ export default function Hero() {
             I&apos;m passionate about clean code, smooth user experiences, and automating builds with CI/CD to keep things running fast and reliably
           </motion.p>
           <motion.a
-            href="#about"
+            href="/about"
             className="mt-4 inline-flex items-center text-xs lg:text-sm font-bold tracking-widest text-[#296d6e] uppercase hover:gap-3 transition-all duration-200"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -142,7 +144,7 @@ export default function Hero() {
           </div>
           {/* Social Media Section */}
           <motion.div 
-            className="mt-16 w-full flex flex-col items-start text-left pl-0 md:pl-4 pr-0 md:pr-8 mb-16"
+            className="mt-16 w-full flex flex-col items-start text-left pl-0 md:pl-4 pr-0 md:pr-8 mb-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 3.6, ease: "easeOut" }}
@@ -162,6 +164,7 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+      
     </section>
   );
 } 

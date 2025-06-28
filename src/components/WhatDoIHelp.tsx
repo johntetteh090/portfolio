@@ -107,7 +107,7 @@ export default function WhatDoIHelp() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
-                I also work with Kafka for event-driven architectures, implement error boundaries, handle asynchronous data, and set up CI/CD pipelines for automated builds and deployments. Whether it's improving performance, managing app lifecycle, or structuring clean, maintainable code — I'm all in.
+                I also work with Kafka for event-driven architectures, implement error boundaries, handle asynchronous data, and set up CI/CD pipelines for automated builds and deployments. Whether it&apos;s improving performance, managing app lifecycle, or structuring clean, maintainable code — I&apos;m all in.
               </motion.p>
               
               {/* Stats Section */}

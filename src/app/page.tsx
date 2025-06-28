@@ -1,18 +1,21 @@
 import Hero from "../components/Hero";
 import WhatDoIHelp from "../components/WhatDoIHelp";
+import AboutUs from "../components/AboutUs";
 import About from "../components/About";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main id="home" className="flex flex-col gap-24 py-16">
+      <main id="home" className="flex flex-col pt-16">
         <Hero />
         <WhatDoIHelp />
-        <About />
-        
+        <AboutUs />
+        {/* <About /> */}
       </main>
+      <Footer />
     </>
   );
 }
