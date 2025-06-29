@@ -11,6 +11,7 @@ export default function Navbar() {
 
   const isHomePage = pathname === "/";
   const isAboutPage = pathname === "/about";
+  const isPortfolioPage = pathname === "/portfolio";
 
   return (
     <motion.nav
@@ -58,8 +59,12 @@ export default function Navbar() {
               About
             </motion.a>
             <motion.a
-              href="#portfolio"
-              className="text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal text-xs lg:text-sm"
+              href="/portfolio"
+              className={`transition-colors duration-200 text-xs lg:text-sm ${
+                isPortfolioPage 
+                  ? "text-[#296d6e] font-bold" 
+                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+              }`}
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -124,8 +129,12 @@ export default function Navbar() {
               About
             </motion.a>
             <motion.a
-              href="#portfolio"
-              className="block text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal text-center text-sm"
+              href="/portfolio"
+              className={`block transition-colors duration-200 text-center text-sm ${
+                isPortfolioPage 
+                  ? "text-[#296d6e] font-bold" 
+                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+              }`}
               onClick={() => setIsMenuOpen(false)}
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}

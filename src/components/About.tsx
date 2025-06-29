@@ -99,7 +99,7 @@ export default function About() {
               {/* Learn More Link */}
               <div className="mt-8 pt-6 border-t border-[#296d6e]/20">
                 <Link 
-                  href="/" 
+                  href="/portfolio" 
                   className="inline-flex items-center gap-2 bg-[#296d6e] text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 group"
                 >
                   Learn More About My Work

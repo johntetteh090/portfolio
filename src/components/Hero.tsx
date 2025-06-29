@@ -124,7 +124,7 @@ export default function Hero() {
               Explore a selection of projects and case studies that showcase my skills in web development, UI/UX, and automation.
             </motion.p>
             <motion.a
-              href="#portfolio"
+              href="/portfolio"
               className="mt-4 inline-flex items-center text-xs lg:text-sm font-bold tracking-widest text-[#296d6e] uppercase hover:gap-3 transition-all duration-200"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
