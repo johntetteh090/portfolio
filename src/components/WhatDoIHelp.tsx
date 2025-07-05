@@ -123,7 +123,7 @@ export default function WhatDoIHelp() {
                   <div className="text-xs text-[#081b21]/60">Total Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#296d6e] mb-1">28+</div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#296d6e] mb-1">10+</div>
                   <div className="text-xs text-[#081b21]/60">Happy Clients</div>
                 </div>
               </motion.div>

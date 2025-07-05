@@ -37,14 +37,14 @@ export default function AboutPage() {
   ];
 
   const skills = [
-    "Next.js",
-    "Flutter",
-    "React Native",
-    "DevOps (CI/CD)",
-    "React.js",
-    "Node.js",
-    "Express.js",
-    "MySQL",
+    { name: "Next.js", icon: "devicon-nextjs-plain", color: "#000000" },
+    { name: "Flutter", icon: "devicon-flutter-plain", color: "#02569B" },
+    { name: "React Native", icon: "devicon-react-original", color: "#61DAFB" },
+    { name: "DevOps", icon: "devicon-docker-plain", color: "#2496ED" },
+    { name: "React.js", icon: "devicon-react-original", color: "#61DAFB" },
+    { name: "Node.js", icon: "devicon-nodejs-plain", color: "#339933" },
+    { name: "Express.js", icon: "devicon-express-original", color: "#000000" },
+    { name: "MySQL", icon: "devicon-mysql-plain", color: "#4479A1" },
   ];
 
   // Animation variants
@@ -138,7 +138,7 @@ export default function AboutPage() {
                     className="font-semibold text-[#296d6e]"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                  >5+ years of experience</motion.span> building web apps, mobile applications, and scalable platforms. I love working with <motion.span 
+                  >3+ years of experience</motion.span> building web apps, mobile applications, and scalable platforms. I love working with <motion.span 
                     className="font-semibold text-[#296d6e]"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -164,8 +164,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <motion.a
-                  href="/cv.pdf"
-                  download
+                  href="/file/John Tetteh's CV-1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-[#296d6e] text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-200 group"
                   whileHover={{ 
                     y: -5, 
@@ -278,8 +279,8 @@ export default function AboutPage() {
               >
                 {skills.map((skill, index) => (
                   <motion.span 
-                    key={skill} 
-                    className="bg-[#f8f7f2] text-[#296d6e] px-6 py-3 rounded-full font-medium border border-[#296d6e]/20 hover:bg-[#296d6e] hover:text-white transition-all duration-200 cursor-pointer"
+                    key={skill.name} 
+                    className="flex items-center gap-3 bg-[#f8f7f2] text-[#296d6e] px-6 py-3 rounded-full font-medium border border-[#296d6e]/20 hover:bg-[#296d6e] hover:text-white transition-all duration-200 cursor-pointer group"
                     variants={itemVariants}
                     whileHover={{ 
                       scale: 1.1, 
@@ -288,7 +289,11 @@ export default function AboutPage() {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {skill}
+                    <i 
+                      className={`${skill.icon} text-lg group-hover:text-white transition-colors duration-200`}
+                      style={{ color: skill.color }}
+                    />
+                    {skill.name}
                   </motion.span>
                 ))}
               </motion.div>
@@ -427,7 +432,7 @@ export default function AboutPage() {
                 >
                   {[
                     { number: "50+", label: "Projects Completed" },
-                    { number: "5+", label: "Years Experience" },
+                    { number: "3+", label: "Years Experience" },
                     { number: "100%", label: "Client Satisfaction" },
                     { number: "24/7", label: "Support Available" }
                   ].map((stat, index) => (

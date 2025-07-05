@@ -3,14 +3,14 @@
 import Link from "next/link";
 
 const skills = [
-  "Next.js",
-  "Flutter",
-  "React Native",
-  "DevOps (CI/CD)",
-  "React.js",
-  "Node.js",
-  "Express.js",
-  "MySQL",
+  { name: "Next.js", icon: "devicon-nextjs-plain", color: "#000000" },
+  { name: "Flutter", icon: "devicon-flutter-plain", color: "#02569B" },
+  { name: "React Native", icon: "devicon-react-original", color: "#61DAFB" },
+  { name: "DevOps", icon: "devicon-docker-plain", color: "#2496ED" },
+  { name: "React.js", icon: "devicon-react-original", color: "#61DAFB" },
+  { name: "Node.js", icon: "devicon-nodejs-plain", color: "#339933" },
+  { name: "Express.js", icon: "devicon-express-original", color: "#000000" },
+  { name: "MySQL", icon: "devicon-mysql-plain", color: "#4479A1" },
 ];
 
 const experience = [
@@ -39,7 +39,7 @@ export default function About() {
                 Fullstack Developer & Mobile App Developer
               </h3>
               <p className="text-lg leading-relaxed text-[#081b21]/70 mb-6">
-                I&apos;m a passionate software engineer with 5+ years of experience building web apps, mobile applications, and scalable platforms. I love working with Next.js, React.js, React Native, Flutter, Node.js, Express.js, and MySQL to create beautiful, functional experiences. I also specialize in DevOps and CI/CD practices for automated deployments.
+                I&apos;m a passionate software engineer with 3+ years of experience building web apps, mobile applications, and scalable platforms. I love working with Next.js, React.js, React Native, Flutter, Node.js, Express.js, and MySQL to create beautiful, functional experiences. I also specialize in DevOps and CI/CD practices for automated deployments.
               </p>
               <p className="text-lg leading-relaxed text-[#081b21]/70">
                 When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open source, or sharing knowledge with the developer community.
@@ -54,16 +54,17 @@ export default function About() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {skills.map(skill => (
                   <div 
-                    key={skill} 
+                    key={skill.name} 
                     className="flex flex-col items-center p-4 bg-[#296d6e]/5 rounded-xl border border-[#296d6e]/10 hover:bg-[#296d6e]/10 hover:scale-105 transition-all duration-200 group"
                   >
                     <div className="w-12 h-12 bg-[#296d6e] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200">
-                      <span className="text-white font-bold text-lg">
-                        {skill.split(' ')[0].charAt(0)}
-                      </span>
+                      <i 
+                        className={`${skill.icon} text-2xl`}
+                        style={{ color: skill.color }}
+                      />
                     </div>
                     <span className="text-sm font-medium text-[#296d6e] text-center">
-                      {skill}
+                      {skill.name}
                     </span>
                   </div>
                 ))}
@@ -122,7 +123,7 @@ export default function About() {
               </h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#296d6e] mb-1">5+</div>
+                  <div className="text-3xl font-bold text-[#296d6e] mb-1">3+</div>
                   <div className="text-sm text-[#081b21]/60">Years Experience</div>
                 </div>
                 <div className="text-center">

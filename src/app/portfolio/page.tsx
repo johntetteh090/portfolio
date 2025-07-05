@@ -1,9 +1,10 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import PortfolioCard from "../../components/PortfolioCard";
 
 export default function PortfolioPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -11,74 +12,84 @@ export default function PortfolioPage() {
   
   const projects = [
     {
+      title: "PropEarnly",
+      description: "PropEarnly is a real estate investment platform for fractional UK property ownership. Built with Next.js, Redux, Express.js, and MySQL, it features secure authentication, KYC, wallet management, and real-time portfolio tracking. CI/CD with GitHub Actions ensures robust, automated deployments.PropEarnly is a real estate investment platform for fractional UK property ownership. Built with Next.js, Redux, Express.js, and MySQL, it features secure authentication, KYC, wallet management, and real-time portfolio tracking. CI/CD with GitHub Actions ensures robust, automated deployments.",
+      image: "/images/nextjs.png",
+      stackImages: ["/images/nextjs.png", "/images/devOps.png", "/images/reactjs.png"],
+      technologies: ["Next.js", "Redux", "Express.js", "MySQL", "CI/CD", "GitHub Actions"],
+      github: "",
+      live: "https://dev.propearnly.com/",
+      category: "Fullstack"
+    },
+    {
       title: "E-Commerce Platform",
       description: "A full-stack e-commerce platform built with Next.js, React, and Node.js. Features include user authentication, product management, shopping cart, and payment integration.",
-      image: "/file.svg",
+      image: "/images/reactjs.png",
       technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com/yourusername/ecommerce",
+      github: "https://github.com/johntetteh090/ecommerce",
       live: "https://ecommerce-demo.com",
       category: "Fullstack"
     },
     {
       title: "Mobile Task Manager",
       description: "A cross-platform mobile app for task management built with React Native. Includes offline functionality, push notifications, and cloud sync.",
-      image: "/file.svg",
+      image: "/images/flutter.png",
       technologies: ["React Native", "Firebase", "Redux", "AsyncStorage"],
-      github: "https://github.com/yourusername/task-manager",
+      github: "https://github.com/johntetteh090/task-manager",
       live: "https://task-manager-app.com",
       category: "Mobile"
     },
     {
       title: "Real-time Chat App",
       description: "A real-time chat application with WebSocket integration, user authentication, and file sharing capabilities.",
-      image: "/file.svg",
+      image: "/images/firebase.png",
       technologies: ["React", "Socket.io", "Express.js", "MongoDB"],
-      github: "https://github.com/yourusername/chat-app",
+      github: "https://github.com/johntetteh090/chat-app",
       live: "https://chat-app-demo.com",
       category: "Fullstack"
     },
     {
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with Next.js and Framer Motion animations.",
-      image: "/file.svg",
+      image: "/images/tailwindcss.png",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/yourusername/portfolio",
+      github: "https://github.com/johntetteh090/portfolio",
       live: "https://your-portfolio.com",
       category: "Frontend"
     },
     {
       title: "Weather Dashboard",
       description: "A weather dashboard with real-time data, interactive charts, and location-based forecasts.",
-      image: "/file.svg",
+      image: "/images/figma.png",
       technologies: ["React", "Chart.js", "Weather API", "Geolocation"],
-      github: "https://github.com/yourusername/weather-dashboard",
+      github: "https://github.com/johntetteh090/weather-dashboard",
       live: "https://weather-dashboard.com",
       category: "Frontend"
     },
     {
       title: "DevOps Pipeline",
       description: "Automated CI/CD pipeline with Docker, GitHub Actions, and cloud deployment for scalable applications.",
-      image: "/file.svg",
+      image: "/images/devOps.png",
       technologies: ["Docker", "GitHub Actions", "AWS", "Nginx"],
-      github: "https://github.com/yourusername/devops-pipeline",
+      github: "https://github.com/johntetteh090/devops-pipeline",
       live: "https://pipeline-demo.com",
       category: "DevOps"
     },
     {
       title: "Social Media App",
       description: "A social media platform with real-time messaging, photo sharing, and user profiles.",
-      image: "/file.svg",
+      image: "/images/firebase.png",
       technologies: ["React", "Firebase", "Cloud Storage", "WebRTC"],
-      github: "https://github.com/yourusername/social-app",
+      github: "https://github.com/johntetteh090/social-app",
       live: "https://social-app-demo.com",
       category: "Fullstack"
     },
     {
       title: "AI Chat Assistant",
       description: "An AI-powered chat assistant with natural language processing and machine learning capabilities.",
-      image: "/file.svg",
+      image: "/images/figma.png",
       technologies: ["Python", "TensorFlow", "React", "FastAPI"],
-      github: "https://github.com/yourusername/ai-chat",
+      github: "https://github.com/johntetteh090/ai-chat",
       live: "https://ai-chat-demo.com",
       category: "AI/ML"
     }
@@ -135,6 +146,8 @@ export default function PortfolioPage() {
     const prevIndex = Math.max(currentSlide - 1, 0);
     scrollToProject(prevIndex);
   };
+
+
 
   return (
     <>
@@ -200,84 +213,17 @@ export default function PortfolioPage() {
                   className="flex gap-8 overflow-x-auto scrollbar-hide pb-8 w-full"
                   style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
-                  {projects.map((project, index) => (
-                    <motion.div
+                                    {projects.map((project, index) => (
+                    <PortfolioCard
                       key={index}
-                      className="flex-shrink-0 w-80 bg-gradient-to-br from-white to-[#f0f9ff] rounded-3xl overflow-hidden shadow-xl border border-[#296d6e]/10 hover:shadow-2xl transition-all duration-300 group"
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      whileHover={{ y: -10, scale: 1.02 }}
-                    >
-                      {/* Project Image */}
-                      <div className="relative h-48 bg-gradient-to-br from-[#296d6e]/20 to-[#296d6e]/5 overflow-hidden">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <svg className="w-16 h-16 text-[#296d6e]/40 group-hover:text-[#296d6e]/60 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                          </svg>
-                        </div>
-                        <div className="absolute top-4 right-4">
-                          <span className="bg-gradient-to-r from-[#296d6e] to-[#1e4d4e] text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-                            {project.category}
-                          </span>
-                        </div>
-                        {/* Hover overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#296d6e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </div>
-
-                      {/* Project Content */}
-                      <div className="p-6 bg-white">
-                        <h3 className="text-xl font-bold text-[#081b21] mb-3 group-hover:text-[#296d6e] transition-colors duration-300">
-                          {project.title}
-                        </h3>
-                        <p className="text-[#081b21]/70 mb-4 leading-relaxed text-sm">
-                          {project.description}
-                        </p>
-
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span 
-                              key={techIndex}
-                              className="bg-gradient-to-r from-[#296d6e]/10 to-[#296d6e]/5 text-[#296d6e] px-3 py-1 rounded-lg text-xs font-medium border border-[#296d6e]/20 hover:from-[#296d6e]/20 hover:to-[#296d6e]/10 transition-all duration-200"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* Project Links */}
-                        <div className="flex gap-3">
-                          <motion.a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-gradient-to-r from-[#296d6e] to-[#1e4d4e] text-white px-4 py-2 rounded-lg font-medium hover:from-[#1e4d4e] hover:to-[#296d6e] transition-all duration-200 text-sm shadow-md hover:shadow-lg"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .268.18.579.688.481C19.138 20.203 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z"/>
-                            </svg>
-                            Code
-                          </motion.a>
-                          <motion.a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-white text-[#296d6e] border-2 border-[#296d6e] px-4 py-2 rounded-lg font-medium hover:bg-[#296d6e] hover:text-white transition-all duration-200 text-sm shadow-md hover:shadow-lg"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Live
-                          </motion.a>
-                        </div>
-                      </div>
-                    </motion.div>
+                      title={project.title}
+                      description={project.description}
+                      category={project.category}
+                      technologies={project.technologies}
+                      github={project.github}
+                      live={project.live}
+                      index={index}
+                    />
                   ))}
                 </div>
 
@@ -368,7 +314,7 @@ export default function PortfolioPage() {
             >
               {[
                 { number: "50+", label: "Projects Completed" },
-                { number: "25+", label: "Happy Clients" },
+                { number: "10+", label: "Happy Clients" },
                 { number: "100%", label: "Success Rate" },
                 { number: "24/7", label: "Support Available" }
               ].map((stat, index) => (
@@ -446,6 +392,9 @@ export default function PortfolioPage() {
           </div>
         </section>
       </main>
+
+
+
       <Footer />
     </>
   );
