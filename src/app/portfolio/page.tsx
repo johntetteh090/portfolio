@@ -19,52 +19,58 @@ export default function PortfolioPage() {
       technologies: ["Next.js", "Redux", "Express.js", "MySQL", "CI/CD", "GitHub Actions"],
       github: "",
       live: "https://dev.propearnly.com/",
-      category: "Fullstack"
+      category: "Fullstack",
+      customImages: ["/images/propearnly/image1.png", "/images/propearnly/image2.png"]
     },
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform built with Next.js, React, and Node.js. Features include user authentication, product management, shopping cart, and payment integration.",
+      title: "MyTrotro",
+      description: "MyTrotro is a comprehensive event booking and travel ticketing app for Ghana. Built with Flutter, it features event discovery, bus ticket booking, secure payments via mobile money, digital QR tickets, real-time notifications, and location services. I used Firebase for OTP SMS to get codes for international numbers, Kafka for caching data, and Provider for state management. Implemented CI/CD pipeline using GitHub Actions with Firebase Distribution for faster app builds, automated testing, and seamless deployment to both Android and iOS platforms. The app streamlines the entire booking process from discovery to ticket validation, making event attendance and travel seamless across Ghana.",
       image: "/images/reactjs.png",
-      technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com/johntetteh090/ecommerce",
-      live: "https://ecommerce-demo.com",
-      category: "Fullstack"
+      technologies: ["Flutter", "Firebase", "Kafka", "PHP Laravel", "CI/CD"],
+      github: "https://github.com/johntetteh090/mytrotro",
+      live: "https://play.google.com/store/apps/details?id=com.mytrotro.app",
+      category: "Mobile",
+      customImages: ["/images/mytrotro/image1.png", "/images/mytrotro/image2.png"]
     },
     {
-      title: "Mobile Task Manager",
-      description: "A cross-platform mobile app for task management built with React Native. Includes offline functionality, push notifications, and cloud sync.",
+      title: "MyTrotro Web Admin",
+      description: "A comprehensive web administration dashboard for MyTrotro event booking and travel platform. Built with Flutter, PHP Laravel, Provider, and Firebase, it provides complete control over events, bookings, user management, analytics, and system administration. Implemented CI/CD pipeline using GitHub Actions with Firebase Distribution for faster builds, automated testing, and seamless deployment to ensure reliable admin operations. Features include real-time data monitoring, bulk operations, reporting tools, and secure admin authentication.",
       image: "/images/flutter.png",
-      technologies: ["React Native", "Firebase", "Redux", "AsyncStorage"],
-      github: "https://github.com/johntetteh090/task-manager",
-      live: "https://task-manager-app.com",
-      category: "Mobile"
+      technologies: ["Flutter", "PHP Laravel", "Provider", "Firebase", "CI/CD"],
+      github: "https://github.com/johntetteh090/mytrotro-web-admin",
+      live: "https://mwadp.mytrotro.com/login",
+      category: "Web Admin",
+      customImages: ["/images/mytrotro_web/image1.png", "/images/mytrotro_web/image2.png"]
     },
     {
-      title: "Real-time Chat App",
-      description: "A real-time chat application with WebSocket integration, user authentication, and file sharing capabilities.",
+      title: "Logistics Connect",
+      description: "A comprehensive logistics and supply chain management platform connecting businesses with reliable shipping and transportation services. I effectively used Next.js with TypeScript to build a full-stack application with server-side rendering for optimal SEO, API routes for backend functionality, and type-safe components for robust logistics operations. Implemented CI/CD pipeline with automated testing, code quality checks, and seamless deployment to ensure reliable updates and maintain high code standards. The platform features real-time tracking, route optimization, cost management, and seamless integration with logistics providers, all built with type safety and modern development practices.",
       image: "/images/firebase.png",
-      technologies: ["React", "Socket.io", "Express.js", "MongoDB"],
-      github: "https://github.com/johntetteh090/chat-app",
-      live: "https://chat-app-demo.com",
-      category: "Fullstack"
+      technologies: ["Next.js", "TypeScript", "CI/CD"],
+      github: "https://github.com/johntetteh090/logistics-connect",
+      live: "https://logisticsconnect.co.uk/",
+      category: "Fullstack",
+      customImages: ["/images/logistics_connect/image1.png", "/images/logistics_connect/image2.png", "/images/logistics_connect/image3.png"]
     },
     {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with Next.js and Framer Motion animations.",
+      title: "VCG (Virtual Career Guidance)",
+      description: "A transformative mobile application designed to empower children in less privileged countries by providing virtual career guidance and skill development opportunities. Built with Flutter and Express.js with Node.js, this platform bridges educational gaps by offering personalized learning paths, career exploration tools, and skill-building resources. We added an intelligent chatbot to provide instant guidance, answer career questions, and offer personalized recommendations. The app serves as a digital mentor, helping young minds discover their potential and build pathways to successful careers regardless of their geographical or economic circumstances.",
       image: "/images/tailwindcss.png",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/johntetteh090/portfolio",
-      live: "https://your-portfolio.com",
-      category: "Frontend"
+      technologies: ["Flutter", "Express.js", "Node.js"],
+      github: "https://github.com/johntetteh090/vcg",
+      live: "https://vcg-app.com",
+      category: "Mobile",
+      customImages: ["/images/VCG/image1.png", "/images/VCG/image2.png", "/images/VCG/image3.png", "/images/VCG/image4.png"]
     },
     {
-      title: "Weather Dashboard",
-      description: "A weather dashboard with real-time data, interactive charts, and location-based forecasts.",
+      title: "Beroda School",
+      description: "A comprehensive school management website for Beroda Prep, facilitating seamless admissions and complaint management systems. Built with modern web technologies, this platform provides an intuitive interface for parents to enroll their children, submit complaints, and access school information. The website streamlines administrative processes while maintaining the school's commitment to nurturing brilliance and building leaders through excellent educational services.",
       image: "/images/figma.png",
-      technologies: ["React", "Chart.js", "Weather API", "Geolocation"],
-      github: "https://github.com/johntetteh090/weather-dashboard",
-      live: "https://weather-dashboard.com",
-      category: "Frontend"
+      technologies: ["Next.js", "Express.js", "CI/CD"],
+      github: "https://github.com/johntetteh090/beroda-school",
+      live: "https://berodaschool.com/",
+      category: "Fullstack",
+      customImages: ["/images/beroda/image1.png", "/images/beroda/image2.png", "/images/beroda/image3.png"]
     },
     {
       title: "DevOps Pipeline",
@@ -220,9 +226,9 @@ export default function PortfolioPage() {
                       description={project.description}
                       category={project.category}
                       technologies={project.technologies}
-                      github={project.github}
                       live={project.live}
                       index={index}
+                      customImages={project.customImages}
                     />
                   ))}
                 </div>
@@ -362,7 +368,7 @@ export default function PortfolioPage() {
                 Ready to Start a Project?
               </h2>
               <p className="text-xl text-[#081b21]/70 mb-8 max-w-2xl mx-auto">
-                Let's work together to bring your ideas to life. I'm always excited to take on new challenges and create innovative solutions.
+                Let&apos;s work together to bring your ideas to life. I&apos;m always excited to take on new challenges and create innovative solutions.
               </p>
               <motion.a
                 href="mailto:johntetteh090@gmail.com"

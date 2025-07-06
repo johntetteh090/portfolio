@@ -1,7 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Simple image switcher component without animations
+function ImageSwitcher({ images, title }: { images: string[]; title: string }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-white overflow-hidden">
+      <img
+        src={images[currentImageIndex]}
+        alt={`${title} screenshot ${currentImageIndex + 1}`}
+        className="w-full h-full object-cover opacity-90 group-hover/image:opacity-100 transition-opacity duration-300"
+        style={{ objectPosition: 'center center' }}
+      />
+    </div>
+  );
+}
+
+// Technology icon switcher component without animations
+function TechnologyIconSwitcher({ technologies }: { technologies: string[] }) {
+  const [currentTechIndex, setCurrentTechIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTechIndex((prev) => (prev + 1) % Math.min(technologies.length, 3));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [technologies.length]);
+
+  const imageMap: { [key: string]: string } = {
+    'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+    'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+    'Tailwind CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+    'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+    'GitHub Actions': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    'CI/CD': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    'Figma': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+    'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+    'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    'Express.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+    'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    'MySQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    'Redux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
+    'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+    'Nginx': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg',
+    'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+    'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+    'FastAPI': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+    'Socket.io': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg',
+    'Chart.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chartjs/chartjs-original.svg',
+    'Stripe': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stripe/stripe-original.svg',
+    'AsyncStorage': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    'Cloud Storage': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+    'WebRTC': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webrtc/webrtc-original.svg',
+    'Weather API': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    'Geolocation': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    'Mobile Money': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+    'Kafka': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg',
+    'PHP Laravel': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+    'Hostinger': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+    'Web3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg',
+  };
+
+  const currentTech = technologies[currentTechIndex];
+  const imageSrc = imageMap[currentTech] || 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg';
+
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-white">
+      <img
+        src={imageSrc}
+        alt={currentTech}
+        className="w-24 h-24 object-contain opacity-80 group-hover/image:opacity-100 transition-opacity duration-300"
+      />
+    </div>
+  );
+}
 
 interface PortfolioCardProps {
   title: string;
@@ -10,6 +97,7 @@ interface PortfolioCardProps {
   technologies: string[];
   live: string;
   index: number;
+  customImages?: string[];
 }
 
 export default function PortfolioCard({
@@ -19,6 +107,7 @@ export default function PortfolioCard({
   technologies,
   live,
   index,
+  customImages,
 }: PortfolioCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,67 +123,11 @@ export default function PortfolioCard({
       >
         {/* Project Image Carousel */}
         <div className="relative h-48 bg-gradient-to-br from-[#296d6e]/20 to-[#296d6e]/5 overflow-hidden group/image">
-          <motion.div
-            className="w-full h-full flex items-center justify-center"
-            animate={{ x: [0, -320, -640, 0] }}
-            transition={{ duration: 9, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
-          >
-            {technologies.slice(0, 3).map((tech, index) => {
-              const imageMap: { [key: string]: string } = {
-                'Next.js': '/images/nextjs.png',
-                'React': '/images/reactjs.png',
-                'React Native': '/images/reactjs.png',
-                'Flutter': '/images/flutter.png',
-                'Firebase': '/images/firebase.png',
-                'Tailwind CSS': '/images/tailwindcss.png',
-                'Docker': '/images/devOps.png',
-                'GitHub Actions': '/images/devOps.png',
-                'CI/CD': '/images/devOps.png',
-                'Figma': '/images/figma.png',
-                'TypeScript': '/images/reactjs.png',
-                'Node.js': '/images/reactjs.png',
-                'Express.js': '/images/reactjs.png',
-                'MongoDB': '/images/firebase.png',
-                'MySQL': '/images/firebase.png',
-                'Redux': '/images/reactjs.png',
-                'AWS': '/images/devOps.png',
-                'Nginx': '/images/devOps.png',
-                'Python': '/images/firebase.png',
-                'TensorFlow': '/images/firebase.png',
-                'FastAPI': '/images/firebase.png',
-                'Socket.io': '/images/firebase.png',
-                'Chart.js': '/images/reactjs.png',
-                'Stripe': '/images/firebase.png',
-                'AsyncStorage': '/images/firebase.png',
-                'Cloud Storage': '/images/firebase.png',
-                'WebRTC': '/images/firebase.png',
-                'Weather API': '/images/firebase.png',
-                'Geolocation': '/images/firebase.png',
-              };
-              
-              const imageSrc = imageMap[tech] || '/images/nextjs.png';
-              
-              return (
-                <div key={index} className="flex-shrink-0 w-80 h-full flex items-center justify-center">
-                  <motion.img
-                    src={imageSrc}
-                    alt={tech}
-                    className="w-20 h-20 object-contain opacity-60 group-hover/image:opacity-80 transition-opacity duration-300"
-                    animate={{ 
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ 
-                      duration: 2, 
-                      repeat: Infinity, 
-                      repeatType: 'loop',
-                      delay: index * 0.5,
-                      ease: 'easeInOut'
-                    }}
-                  />
-                </div>
-              );
-            })}
-          </motion.div>
+          {customImages && customImages.length > 0 ? (
+            <ImageSwitcher images={customImages} title={title} />
+          ) : (
+            <TechnologyIconSwitcher technologies={technologies} />
+          )}
           <div className="absolute top-4 right-4">
             <span className="bg-gradient-to-r from-[#296d6e] to-[#1e4d4e] text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
               {category}
@@ -130,38 +163,43 @@ export default function PortfolioCard({
           <div className="flex flex-wrap gap-2 mb-6">
             {technologies.map((tech, techIndex) => {
               const imageMap: { [key: string]: string } = {
-                'Next.js': '/images/nextjs.png',
-                'React': '/images/reactjs.png',
-                'React Native': '/images/reactjs.png',
-                'Flutter': '/images/flutter.png',
-                'Firebase': '/images/firebase.png',
-                'Tailwind CSS': '/images/tailwindcss.png',
-                'Docker': '/images/devOps.png',
-                'GitHub Actions': '/images/devOps.png',
-                'CI/CD': '/images/devOps.png',
-                'Figma': '/images/figma.png',
-                'TypeScript': '/images/reactjs.png',
-                'Node.js': '/images/reactjs.png',
-                'Express.js': '/images/reactjs.png',
-                'MongoDB': '/images/firebase.png',
-                'MySQL': '/images/firebase.png',
-                'Redux': '/images/reactjs.png',
-                'AWS': '/images/devOps.png',
-                'Nginx': '/images/devOps.png',
-                'Python': '/images/firebase.png',
-                'TensorFlow': '/images/firebase.png',
-                'FastAPI': '/images/firebase.png',
-                'Socket.io': '/images/firebase.png',
-                'Chart.js': '/images/reactjs.png',
-                'Stripe': '/images/firebase.png',
-                'AsyncStorage': '/images/firebase.png',
-                'Cloud Storage': '/images/firebase.png',
-                'WebRTC': '/images/firebase.png',
-                'Weather API': '/images/firebase.png',
-                'Geolocation': '/images/firebase.png',
-              };
+                'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+                'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+                'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+                'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+                'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+                'Tailwind CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+                'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+                'GitHub Actions': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+                'CI/CD': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+                'Figma': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+                'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+                'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+                'Express.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+                'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+                'MySQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+                'Redux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
+                'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+                'Nginx': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg',
+                'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+                'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+                'FastAPI': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+                'Socket.io': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg',
+                'Chart.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chartjs/chartjs-original.svg',
+                'Stripe': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stripe/stripe-original.svg',
+                'AsyncStorage': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+                'Cloud Storage': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+                'WebRTC': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webrtc/webrtc-original.svg',
+                'Weather API': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+                'Geolocation': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+                                  'Mobile Money': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+                  'Kafka': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg',
+                  'PHP Laravel': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+                  'Hostinger': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+                  'Web3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg',
+                };
               
-              const imageSrc = imageMap[tech] || '/images/nextjs.png';
+              const imageSrc = imageMap[tech] || 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg';
               
               return (
                 <span 
