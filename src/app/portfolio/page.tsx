@@ -73,13 +73,47 @@ export default function PortfolioPage() {
       customImages: ["/images/beroda/image1.png", "/images/beroda/image2.png", "/images/beroda/image3.png"]
     },
     {
-      title: "DevOps Pipeline",
-      description: "Automated CI/CD pipeline with Docker, GitHub Actions, and cloud deployment for scalable applications.",
-      image: "/images/devOps.png",
-      technologies: ["Docker", "GitHub Actions", "AWS", "Nginx"],
-      github: "https://github.com/johntetteh090/devops-pipeline",
-      live: "https://pipeline-demo.com",
-      category: "DevOps"
+      title: "Next change User app",
+      description: "Next Change User App is a modern American-based service platform that connects users with a wide range of local service providers. Whether you need home repairs, cleaning, moving, or personal care, users can easily browse, request, and manage services directly from the app. The platform features real-time provider matching, secure in-app payments, service tracking, and user reviews to ensure a seamless and trustworthy experience. Built with Flutter for a smooth cross-platform experience, NestJS for scalable backend services, and Firebase for real-time data and authentication, it emphasizes reliability, transparency, and user empowerment, making it the go-to solution for on-demand services in the US market.",
+      image: "/images/flutter.png",
+      technologies: ["Flutter", "NestJS", "Firebase"],
+      github: "https://github.com/johntetteh090/next-change-user-app",
+      live: "https://next-change-user-app.com",
+      category: "Fullstack",
+      customImages: [
+        "/images/next_change/image1.png",
+        "/images/next_change/image2.png",
+        "/images/next_change/image3.png"
+      ]
+    },
+    {
+      title: "Green Drive",
+      description: "Green Drive is an innovative sustainable transportation platform designed to promote eco-friendly mobility solutions across Africa. The platform connects users with electric vehicle charging stations, promotes carpooling initiatives, and provides real-time data on carbon footprint reduction. Built with modern web technologies, it features interactive maps for charging station locations, user authentication, payment processing for charging services, and comprehensive analytics for environmental impact tracking. The platform aims to accelerate the adoption of green transportation while building a community of environmentally conscious users committed to reducing their carbon footprint.",
+      image: "/images/nextjs.png",
+      technologies: ["Next.js", "TypeScript", "Node.js", "Express.js", "MongoDB"],
+      github: "https://github.com/johntetteh090/green-drive",
+      live: "https://gd-africa.com/",
+      category: "Fullstack",
+      customImages: [
+        "/images/green_drive/image1.png",
+        "/images/green_drive/image2.png",
+        "/images/green_drive/image3.png",
+        "/images/green_drive/image4.png"
+      ]
+    },
+    {
+      title: "Papillion",
+      description: "Papillion is a comprehensive creative academy platform designed to nurture and showcase artistic talent. The platform provides a digital space for creative professionals and students to connect, learn, and grow their skills. Built with Next.js for optimal performance and SEO, it features course management systems, portfolio showcases, interactive learning modules, and community engagement tools. The implementation includes robust CI/CD pipelines ensuring reliable deployments and continuous integration for seamless updates. The platform serves as a hub for creative education, fostering collaboration between artists, designers, and creative professionals while providing accessible learning resources for aspiring creatives.",
+      image: "/images/nextjs.png",
+      technologies: ["Next.js", "CI/CD"],
+      github: "https://github.com/johntetteh090/papillion",
+      live: "https://papcreativeacademy.org/",
+      category: "Fullstack",
+      customImages: [
+        "/images/pappillion/image1.png",
+        "/images/pappillion/image2.png",
+        "/images/pappillion/image3.png"
+      ]
     },
     {
       title: "Social Media App",
