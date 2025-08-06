@@ -94,7 +94,7 @@ export default function AboutUs() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             {[
-              { number: "50+", label: "Projects Completed" },
+              { number: "22+", label: "Projects Completed" },
               { number: "3+", label: "Years Experience" },
               { number: "100%", label: "Client Satisfaction" },
               { number: "24/7", label: "Support Available" }

@@ -41,6 +41,7 @@ function TechnologyIconSwitcher({ technologies }: { technologies: string[] }) {
 
   const imageMap: { [key: string]: string } = {
     'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    'Nuxt.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg',
     'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
@@ -161,9 +162,10 @@ export default function PortfolioCard({
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {technologies.map((tech, techIndex) => {
+                        {technologies.map((tech, techIndex) => {
               const imageMap: { [key: string]: string } = {
                 'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+                'Nuxt.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg',
                 'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
                 'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
                 'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
@@ -192,12 +194,12 @@ export default function PortfolioCard({
                 'WebRTC': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webrtc/webrtc-original.svg',
                 'Weather API': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
                 'Geolocation': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-                                  'Mobile Money': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-                  'Kafka': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg',
-                  'PHP Laravel': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
-                  'Hostinger': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
-                  'Web3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg',
-                };
+                'Mobile Money': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+                'Kafka': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg',
+                'PHP Laravel': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+                'Hostinger': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+                'Web3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg',
+              };
               
               const imageSrc = imageMap[tech] || 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg';
               

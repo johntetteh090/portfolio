@@ -431,7 +431,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                 >
                   {[
-                    { number: "50+", label: "Projects Completed" },
+                    { number: "27+", label: "Projects Completed" },
                     { number: "3+", label: "Years Experience" },
                     { number: "100%", label: "Client Satisfaction" },
                     { number: "24/7", label: "Support Available" }

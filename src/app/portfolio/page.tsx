@@ -43,6 +43,17 @@ export default function PortfolioPage() {
       customImages: ["/images/mytrotro_web/image1.png", "/images/mytrotro_web/image2.png"]
     },
     {
+      title: "Testoria",
+      description: "Testoria is a comprehensive examination portal designed for students and institutions to conduct and take tests online. Built with Next.js for optimal performance and user experience, it features secure test creation, real-time exam taking, automated grading, and detailed analytics. The platform supports both individual student access and institutional management with role-based permissions. Implemented with CI/CD pipeline using GitHub Actions for automated testing and deployment, ensuring reliable and secure exam delivery. The system includes robust authentication, test scheduling, result management, and comprehensive reporting tools to streamline the entire examination process from creation to completion.",
+      image: "/images/nextjs.png",
+      stackImages: ["/images/nextjs.png", "/images/devOps.png", "/images/reactjs.png"],
+      technologies: ["Next.js", "CI/CD", "GitHub Actions", "Nuxt.js", "MySQL"],
+      github: "",
+      live: "https://dev.testoria.benchfive.org/",
+      category: "Fullstack",
+      customImages: ["/images/testoria/image1.png", "/images/testoria/image2.png", "/images/testoria/image3.png", "/images/testoria/image4.png"]
+    },
+    {
       title: "Logistics Connect",
       description: "A comprehensive logistics and supply chain management platform connecting businesses with reliable shipping and transportation services. I effectively used Next.js with TypeScript to build a full-stack application with server-side rendering for optimal SEO, API routes for backend functionality, and type-safe components for robust logistics operations. Implemented CI/CD pipeline with automated testing, code quality checks, and seamless deployment to ensure reliable updates and maintain high code standards. The platform features real-time tracking, route optimization, cost management, and seamless integration with logistics providers, all built with type safety and modern development practices.",
       image: "/images/firebase.png",
@@ -115,24 +126,7 @@ export default function PortfolioPage() {
         "/images/pappillion/image3.png"
       ]
     },
-    {
-      title: "Social Media App",
-      description: "A social media platform with real-time messaging, photo sharing, and user profiles.",
-      image: "/images/firebase.png",
-      technologies: ["React", "Firebase", "Cloud Storage", "WebRTC"],
-      github: "https://github.com/johntetteh090/social-app",
-      live: "https://social-app-demo.com",
-      category: "Fullstack"
-    },
-    {
-      title: "AI Chat Assistant",
-      description: "An AI-powered chat assistant with natural language processing and machine learning capabilities.",
-      image: "/images/figma.png",
-      technologies: ["Python", "TensorFlow", "React", "FastAPI"],
-      github: "https://github.com/johntetteh090/ai-chat",
-      live: "https://ai-chat-demo.com",
-      category: "AI/ML"
-    }
+
   ];
 
   const projectWidth = 320; // Width of each project card (w-80 = 320px)
@@ -353,7 +347,7 @@ export default function PortfolioPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {[
-                { number: "50+", label: "Projects Completed" },
+                { number: "27+", label: "Projects Completed" },
                 { number: "10+", label: "Happy Clients" },
                 { number: "100%", label: "Success Rate" },
                 { number: "24/7", label: "Support Available" }
