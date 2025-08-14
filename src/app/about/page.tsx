@@ -42,6 +42,7 @@ export default function AboutPage() {
     { name: "React Native", icon: "devicon-react-original", color: "#61DAFB" },
     { name: "DevOps", icon: "devicon-docker-plain", color: "#2496ED" },
     { name: "React.js", icon: "devicon-react-original", color: "#61DAFB" },
+    { name: "Firebase", icon: "devicon-firebase-plain", color: "#ffa000" },
     { name: "Node.js", icon: "devicon-nodejs-plain", color: "#339933" },
     { name: "Express.js", icon: "devicon-express-original", color: "#000000" },
     { name: "MySQL", icon: "devicon-mysql-plain", color: "#4479A1" },

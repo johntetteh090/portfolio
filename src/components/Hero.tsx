@@ -8,13 +8,13 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-[#f8f7f2] pt-8 pb-10 overflow-hidden">
       {/* Desktop: image at bottom center */}
-      <div className="hidden md:block absolute bottom-[-9rem] lg:bottom-[-5rem] xl:bottom-0 left-[25%] right-0 z-0">
+      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[0.001] left-[17%] xl:left-[25%] right-0 z-0">
         <Image
           src="/images/me/me.png"
           alt="Hero background"
           width={600}
           height={700}
-          className="object-contain w-[50%] h-[700px] rounded-none"
+          className="object-contain xl:object-cover 2xl:object-contain w-[50%] h-[700px] rounded-none"
         />
       </div>
       {/* Mobile: image on top */}
@@ -31,7 +31,7 @@ export default function Hero() {
       {/* Overlayed text content */}
       <div className="relative z-10 flex flex-col md:flex-row items-stretch w-full max-w-[2600px] ">
         {/* Left: Name/title/subtitle */}
-        <div className="md:w-[50%] relative flex flex-col justify-center md:items-start md:text-left text-left pl-4 md:pl-[9%] 2xl:pl-[13%] mb-8 z-10 sm:mr-10 lg:mr-0">
+        <div className="md:w-[50%] relative flex flex-col justify-center md:justify-start md:mt-16 md:items-start md:text-left text-left pl-4 md:pl-[9%] 2xl:pl-[13%] mb-8 z-10 sm:mr-10 lg:mr-0">
           {/* Green horizontal line */}
           <motion.div
             className="w-24 h-1 bg-[#296d6e] mb-4 "
@@ -47,6 +47,7 @@ export default function Hero() {
               // className="w-full"
             >
               I&apos;m John Kennedy,
+              
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 60 }}
@@ -70,7 +71,7 @@ export default function Hero() {
 
           {/* Tech Stack */}
           <motion.div
-            className="flex flex-wrap gap-3 mb-8"
+            className="flex flex-wrap gap-3 mb-8 sm:max-w-[25rem]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 1.6, ease: "easeOut" }}
