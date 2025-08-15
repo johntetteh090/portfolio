@@ -89,12 +89,26 @@ export default function PortfolioPage() {
       image: "/images/flutter.png",
       technologies: ["Flutter", "NestJS", "Firebase"],
       github: "https://github.com/johntetteh090/next-change-user-app",
-      live: "https://next-change-user-app.com",
+      live: "https://drive.google.com/file/d/1mCRAz-lnYAtv-RIYF-b4DjtOd2hAdvpi/view?usp=sharing",
       category: "Fullstack",
       customImages: [
         "/images/next_change/image1.png",
         "/images/next_change/image2.png",
         "/images/next_change/image3.png"
+      ]
+    },
+    {
+      title: "Next change Provider app",
+      description: "Next Change Provider App is the service provider counterpart to the Next Change platform, designed specifically for service professionals to manage their business operations efficiently. This comprehensive provider application features advanced route optimization with Google Maps integration and Directions API for intelligent service scheduling and navigation. Providers can manage service requests, optimize travel routes, track earnings, and maintain their service profiles. The app includes real-time location tracking, automated route planning, service area management, and seamless integration with the main Next Change ecosystem. Built with Flutter for cross-platform compatibility and NestJS for robust backend services, it empowers service providers to deliver exceptional customer experiences while maximizing operational efficiency through smart routing and location-based services.",
+      image: "/images/flutter.png",
+      technologies: ["Flutter", "NestJS", "Firebase"],
+      github: "https://github.com/johntetteh090/next-change-provider-app",
+      live: "https://drive.google.com/file/d/1mCRAz-lnYAtv-RIYF-b4DjtOd2hAdvpi/view?usp=sharing",
+      category: "Fullstack",
+      customImages: [
+        "/images/next_change_provider/image1.png",
+        "/images/next_change_provider/image2.png",
+        "/images/next_change_provider/image3.png"
       ]
     },
     {

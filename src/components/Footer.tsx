@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -34,10 +35,14 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h3 className="text-xl font-bold text-[#296d6e] mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="/" className="text-[#081b21]/70 hover:text-[#296d6e] transition-colors">Home</a></li>
-              <li><a href="/about" className="text-[#081b21]/70 hover:text-[#296d6e] transition-colors">About</a></li>
-              <li><a href="/portfolio" className="text-[#081b21]/70 hover:text-[#296d6e] transition-colors">Portfolio</a></li>
+            <ul>
+              <li>
+                <Link href="/" className="text-[#081b21]/70 hover:text-[#296d6e] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li><Link href="/about" className="text-[#081b21]/70 hover:text-[#296d6e] transition-colors">About</Link></li>
+              <li><Link href="/portfolio" className="text-[#081b21]/70 hover:text-[#296d6e] transition-colors">Portfolio</Link></li>
             </ul>
           </motion.div>
 

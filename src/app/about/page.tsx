@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { IconCode, IconDeviceMobile, IconRocket, IconUsers, IconBriefcase, IconDownload, IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { IconCode, IconDeviceMobile, IconRocket, IconUsers, IconDownload, IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -79,18 +79,6 @@ export default function AboutPage() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const scaleIn = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
         ease: "easeOut"
       }
     }
@@ -280,7 +268,7 @@ export default function AboutPage() {
               >
                 {skills.map((skill, index) => (
                   <motion.span 
-                    key={skill.name} 
+                    key={index} 
                     className="flex items-center gap-3 bg-[#f8f7f2] text-[#296d6e] px-6 py-3 rounded-full font-medium border border-[#296d6e]/20 hover:bg-[#296d6e] hover:text-white transition-all duration-200 cursor-pointer group"
                     variants={itemVariants}
                     whileHover={{ 

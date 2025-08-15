@@ -254,7 +254,7 @@ export default function AboutUs() {
               Ready to Build Something Amazing?
             </h3>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Let's work together to bring your ideas to life. I'm always excited to take on new challenges and create innovative solutions.
+              Let&apos;s work together to bring your ideas to life. I&apos;m always excited to take on new challenges and create innovative solutions.
             </p>
             <motion.a
               href="/portfolio"
