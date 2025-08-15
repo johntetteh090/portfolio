@@ -66,8 +66,7 @@ export default function AboutPage() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 0.6
       }
     }
   };
@@ -78,8 +77,7 @@ export default function AboutPage() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 0.8
       }
     }
   };
