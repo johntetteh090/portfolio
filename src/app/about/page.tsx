@@ -67,7 +67,7 @@ export default function AboutPage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -79,7 +79,7 @@ export default function AboutPage() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -95,7 +95,7 @@ export default function AboutPage() {
               className="text-center mb-16"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <motion.h1 
                 className="text-4xl md:text-5xl font-bold mb-6 text-[#296d6e]"
