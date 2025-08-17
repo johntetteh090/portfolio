@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { IconPhone, IconMenu2, IconX } from "@tabler/icons-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,42 +35,51 @@ export default function Navbar() {
 
           {/* Desktop Navigation Links - Centered */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <motion.a
-              href="/"
-              className={`transition-colors duration-200 text-xs lg:text-sm ${
-                isHomePage 
-                  ? "text-[#296d6e] font-bold" 
-                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
-              }`}
+            <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Home
-            </motion.a>
-            <motion.a
-              href="/about"
-              className={`transition-colors duration-200 text-xs lg:text-sm ${
-                isAboutPage 
-                  ? "text-[#296d6e] font-bold" 
-                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
-              }`}
+              <Link
+                href="/"
+                className={`transition-colors duration-200 text-xs lg:text-sm ${
+                  isHomePage 
+                    ? "text-[#296d6e] font-bold" 
+                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                }`}
+              >
+                Home
+              </Link>
+            </motion.div>
+            <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              About
-            </motion.a>
-            <motion.a
-              href="/portfolio"
-              className={`transition-colors duration-200 text-xs lg:text-sm ${
-                isPortfolioPage 
-                  ? "text-[#296d6e] font-bold" 
-                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
-              }`}
+              <Link
+                href="/about"
+                className={`transition-colors duration-200 text-xs lg:text-sm ${
+                  isAboutPage 
+                    ? "text-[#296d6e] font-bold" 
+                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                }`}
+              >
+                About
+              </Link>
+            </motion.div>
+            <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Portfolio
-            </motion.a>
+              <Link
+                href="/portfolio"
+                className={`transition-colors duration-200 text-xs lg:text-sm ${
+                  isPortfolioPage 
+                    ? "text-[#296d6e] font-bold" 
+                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                }`}
+              >
+                Portfolio
+              </Link>
+            </motion.div>
           </div>
 
           {/* Desktop Phone Number */}
@@ -102,45 +112,54 @@ export default function Navbar() {
           initial={false}
         >
           <div className="py-4 space-y-4 border-t border-[#296d6e]/20 mt-4">
-            <motion.a
-              href="/"
-              className={`block transition-colors duration-200 text-center text-sm ${
-                isHomePage 
-                  ? "text-[#296d6e] font-bold" 
-                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
+            <motion.div
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Home
-            </motion.a>
-            <motion.a
-              href="/about"
-              className={`block transition-colors duration-200 text-center text-sm ${
-                isAboutPage 
-                  ? "text-[#296d6e] font-bold" 
-                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
+              <Link
+                href="/"
+                className={`block transition-colors duration-200 text-center text-sm ${
+                  isHomePage 
+                    ? "text-[#296d6e] font-bold" 
+                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+            </motion.div>
+            <motion.div
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              About
-            </motion.a>
-            <motion.a
-              href="/portfolio"
-              className={`block transition-colors duration-200 text-center text-sm ${
-                isPortfolioPage 
-                  ? "text-[#296d6e] font-bold" 
-                  : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
-              }`}
-              onClick={() => setIsMenuOpen(false)}
+              <Link
+                href="/about"
+                className={`block transition-colors duration-200 text-center text-sm ${
+                  isAboutPage 
+                    ? "text-[#296d6e] font-bold" 
+                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+            </motion.div>
+            <motion.div
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Portfolio
-            </motion.a>
+              <Link
+                href="/portfolio"
+                className={`block transition-colors duration-200 text-center text-sm ${
+                  isPortfolioPage 
+                    ? "text-[#296d6e] font-bold" 
+                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Portfolio
+              </Link>
+            </motion.div>
             <motion.a
               href="tel:+233558520500"
               className="flex items-center justify-center space-x-3 text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal"

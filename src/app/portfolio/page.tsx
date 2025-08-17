@@ -30,7 +30,7 @@ export default function PortfolioPage() {
       github: "https://github.com/johntetteh090/mytrotro",
       live: "https://play.google.com/store/apps/details?id=com.mytrotro.app",
       category: "Mobile",
-      customImages: ["/images/mytrotro/image1.png", "/images/mytrotro/image2.png"]
+      customImages: ["/images/myTrotro/image1.png", "/images/myTrotro/image2.png"]
     },
     {
       title: "MyTrotro Web Admin",
@@ -40,7 +40,7 @@ export default function PortfolioPage() {
       github: "https://github.com/johntetteh090/mytrotro-web-admin",
       live: "https://mwadp.mytrotro.com/login",
       category: "Web Admin",
-      customImages: ["/images/mytrotro_web/image1.png", "/images/mytrotro_web/image2.png"]
+      customImages: ["/images/myTrotro_web/image1.png", "/images/myTrotro_web/image2.png"]
     },
     {
       title: "Testoria",
