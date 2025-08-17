@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { IconCode, IconDeviceMobile, IconRocket, IconUsers, IconDownload, IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { baseUrl } from "@/config/url-route";
 
 export default function AboutPage() {
   const features = [
@@ -151,7 +152,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <motion.a
-                  href="/file/John Tetteh's CV-1.pdf"
+                  href={`${baseUrl}/file/John Tetteh's CV-1.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-[#296d6e] text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-200 group"
