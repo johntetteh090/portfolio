@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-[#f8f7f2] pt-8 pb-10 overflow-hidden">
       {/* Desktop: image at bottom center */}
-      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[-4rem] left-[17%] xl:left-[25%] right-0 z-0">
+      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[-5rem] left-[17%] xl:left-[25%] right-0 z-0">
         <Image
           src= {`${baseUrl}/images/me/me.png`}
           alt="Hero background"
