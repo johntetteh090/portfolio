@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import PortfolioCard from "../../components/PortfolioCard";
+import { baseUrl } from "@/config/url-route";
 
 export default function PortfolioPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,130 +15,130 @@ export default function PortfolioPage() {
     {
       title: "PropEarnly",
       description: "PropEarnly is a real estate investment platform for fractional UK property ownership. Built with Next.js, Redux, Express.js, and MySQL, it features secure authentication, KYC, wallet management, and real-time portfolio tracking. CI/CD with GitHub Actions ensures robust, automated deployments.PropEarnly is a real estate investment platform for fractional UK property ownership. Built with Next.js, Redux, Express.js, and MySQL, it features secure authentication, KYC, wallet management, and real-time portfolio tracking. CI/CD with GitHub Actions ensures robust, automated deployments.",
-      image: "/images/nextjs.png",
-      stackImages: ["/images/nextjs.png", "/images/devOps.png", "/images/reactjs.png"],
+      image: `${baseUrl}/images/nextjs.png`,
+      stackImages: [`${baseUrl}/images/nextjs.png`, `${baseUrl}/images/devOps.png`, `${baseUrl}/images/reactjs.png`],
       technologies: ["Next.js", "Redux", "Express.js", "MySQL", "CI/CD", "GitHub Actions"],
       github: "",
       live: "https://dev.propearnly.com/",
       category: "Fullstack",
-      customImages: ["/images/propearnly/image1.png", "/images/propearnly/image2.png"]
+      customImages: [`${baseUrl}/images/propearnly/image1.png`, `${baseUrl}/images/propearnly/image2.png`]
     },
     {
       title: "MyTrotro",
       description: "MyTrotro is a comprehensive event booking and travel ticketing app for Ghana. Built with Flutter, it features event discovery, bus ticket booking, secure payments via mobile money, digital QR tickets, real-time notifications, and location services. I used Firebase for OTP SMS to get codes for international numbers, Kafka for caching data, and Provider for state management. Implemented CI/CD pipeline using GitHub Actions with Firebase Distribution for faster app builds, automated testing, and seamless deployment to both Android and iOS platforms. The app streamlines the entire booking process from discovery to ticket validation, making event attendance and travel seamless across Ghana.",
-      image: "/images/reactjs.png",
+      image: `${baseUrl}/images/reactjs.png`,
       technologies: ["Flutter", "Firebase", "Kafka", "PHP Laravel", "CI/CD"],
       github: "https://github.com/johntetteh090/mytrotro",
       live: "https://play.google.com/store/apps/details?id=com.mytrotro.app",
       category: "Mobile",
-      customImages: ["/images/myTrotro/image1.png", "/images/myTrotro/image2.png"]
+      customImages: [`${baseUrl}/images/myTrotro/image1.png`, `${baseUrl}/images/myTrotro/image2.png`]
     },
     {
       title: "MyTrotro Web Admin",
       description: "A comprehensive web administration dashboard for MyTrotro event booking and travel platform. Built with Flutter, PHP Laravel, Provider, and Firebase, it provides complete control over events, bookings, user management, analytics, and system administration. Implemented CI/CD pipeline using GitHub Actions with Firebase Distribution for faster builds, automated testing, and seamless deployment to ensure reliable admin operations. Features include real-time data monitoring, bulk operations, reporting tools, and secure admin authentication.",
-      image: "/images/flutter.png",
+      image: `${baseUrl}/images/flutter.png`,
       technologies: ["Flutter", "PHP Laravel", "Provider", "Firebase", "CI/CD"],
       github: "https://github.com/johntetteh090/mytrotro-web-admin",
       live: "https://mwadp.mytrotro.com/login",
       category: "Web Admin",
-      customImages: ["/images/myTrotro_web/image1.png", "/images/myTrotro_web/image2.png"]
+      customImages: [`${baseUrl}/images/myTrotro_web/image1.png`, `${baseUrl}/images/myTrotro_web/image2.png`]
     },
     {
       title: "Testoria",
       description: "Testoria is a comprehensive examination portal designed for students and institutions to conduct and take tests online. Built with Next.js for optimal performance and user experience, it features secure test creation, real-time exam taking, automated grading, and detailed analytics. The platform supports both individual student access and institutional management with role-based permissions. Implemented with CI/CD pipeline using GitHub Actions for automated testing and deployment, ensuring reliable and secure exam delivery. The system includes robust authentication, test scheduling, result management, and comprehensive reporting tools to streamline the entire examination process from creation to completion.",
-      image: "/images/nextjs.png",
-      stackImages: ["/images/nextjs.png", "/images/devOps.png", "/images/reactjs.png"],
+      image: `${baseUrl}/images/nextjs.png`,
+      stackImages: [`${baseUrl}/images/nextjs.png`, `${baseUrl}/images/devOps.png`, `${baseUrl}/images/reactjs.png`],
       technologies: ["Next.js", "CI/CD", "GitHub Actions", "Nuxt.js", "MySQL"],
       github: "",
       live: "https://dev.testoria.benchfive.org/",
       category: "Fullstack",
-      customImages: ["/images/testoria/image1.png", "/images/testoria/image2.png", "/images/testoria/image3.png", "/images/testoria/image4.png"]
+      customImages: [`${baseUrl}/images/testoria/image1.png`, `${baseUrl}/images/testoria/image2.png`, `${baseUrl}/images/testoria/image3.png`, `${baseUrl}/images/testoria/image4.png`]
     },
     {
       title: "Logistics Connect",
       description: "A comprehensive logistics and supply chain management platform connecting businesses with reliable shipping and transportation services. I effectively used Next.js with TypeScript to build a full-stack application with server-side rendering for optimal SEO, API routes for backend functionality, and type-safe components for robust logistics operations. Implemented CI/CD pipeline with automated testing, code quality checks, and seamless deployment to ensure reliable updates and maintain high code standards. The platform features real-time tracking, route optimization, cost management, and seamless integration with logistics providers, all built with type safety and modern development practices.",
-      image: "/images/firebase.png",
+      image: `${baseUrl}/images/firebase.png`,
       technologies: ["Next.js", "TypeScript", "CI/CD"],
       github: "https://github.com/johntetteh090/logistics-connect",
       live: "https://logisticsconnect.co.uk/",
       category: "Fullstack",
-      customImages: ["/images/logistics_connect/image1.png", "/images/logistics_connect/image2.png", "/images/logistics_connect/image3.png"]
+      customImages: [`${baseUrl}/images/logistics_connect/image1.png`, `${baseUrl}/images/logistics_connect/image2.png`, `${baseUrl}/images/logistics_connect/image3.png`]
     },
     {
       title: "VCG (Virtual Career Guidance)",
       description: "A transformative mobile application designed to empower children in less privileged countries by providing virtual career guidance and skill development opportunities. Built with Flutter and Express.js with Node.js, this platform bridges educational gaps by offering personalized learning paths, career exploration tools, and skill-building resources. We added an intelligent chatbot to provide instant guidance, answer career questions, and offer personalized recommendations. The app serves as a digital mentor, helping young minds discover their potential and build pathways to successful careers regardless of their geographical or economic circumstances.",
-      image: "/images/tailwindcss.png",
+      image: `${baseUrl}/images/tailwindcss.png`,
       technologies: ["Flutter", "Express.js", "Node.js"],
       github: "https://github.com/johntetteh090/vcg",
       live: "https://vcg-app.com",
       category: "Mobile",
-      customImages: ["/images/VCG/image1.png", "/images/VCG/image2.png", "/images/VCG/image3.png", "/images/VCG/image4.png"]
+      customImages: [`${baseUrl}/images/VCG/image1.png`, `${baseUrl}/images/VCG/image2.png`, `${baseUrl}/images/VCG/image3.png`, `${baseUrl}/images/VCG/image4.png`]
     },
     {
       title: "Beroda School",
       description: "A comprehensive school management website for Beroda Prep, facilitating seamless admissions and complaint management systems. Built with modern web technologies, this platform provides an intuitive interface for parents to enroll their children, submit complaints, and access school information. The website streamlines administrative processes while maintaining the school's commitment to nurturing brilliance and building leaders through excellent educational services.",
-      image: "/images/figma.png",
+      image: `${baseUrl}/images/figma.png`,
       technologies: ["Next.js", "Express.js", "CI/CD"],
       github: "https://github.com/johntetteh090/beroda-school",
       live: "https://berodaschool.com/",
       category: "Fullstack",
-      customImages: ["/images/beroda/image1.png", "/images/beroda/image2.png", "/images/beroda/image3.png"]
+      customImages: [`${baseUrl}/images/beroda/image1.png`, `${baseUrl}/images/beroda/image2.png`, `${baseUrl}/images/beroda/image3.png`]
     },
     {
       title: "Next change User app",
       description: "Next Change User App is a modern American-based service platform that connects users with a wide range of local service providers. Whether you need home repairs, cleaning, moving, or personal care, users can easily browse, request, and manage services directly from the app. The platform features real-time provider matching, secure in-app payments, service tracking, and user reviews to ensure a seamless and trustworthy experience. Built with Flutter for a smooth cross-platform experience, NestJS for scalable backend services, and Firebase for real-time data and authentication, it emphasizes reliability, transparency, and user empowerment, making it the go-to solution for on-demand services in the US market.",
-      image: "/images/flutter.png",
+      image: `${baseUrl}/images/flutter.png`,
       technologies: ["Flutter", "NestJS", "Firebase"],
       github: "https://github.com/johntetteh090/next-change-user-app",
       live: "https://drive.google.com/file/d/1mCRAz-lnYAtv-RIYF-b4DjtOd2hAdvpi/view?usp=sharing",
       category: "Fullstack",
       customImages: [
-        "/images/next_change/image1.png",
-        "/images/next_change/image2.png",
-        "/images/next_change/image3.png"
+        `${baseUrl}/images/next_change/image1.png`,
+        `${baseUrl}/images/next_change/image2.png`,
+        `${baseUrl}/images/next_change/image3.png`
       ]
     },
     {
       title: "Next change Provider app",
       description: "Next Change Provider App is the service provider counterpart to the Next Change platform, designed specifically for service professionals to manage their business operations efficiently. This comprehensive provider application features advanced route optimization with Google Maps integration and Directions API for intelligent service scheduling and navigation. Providers can manage service requests, optimize travel routes, track earnings, and maintain their service profiles. The app includes real-time location tracking, automated route planning, service area management, and seamless integration with the main Next Change ecosystem. Built with Flutter for cross-platform compatibility and NestJS for robust backend services, it empowers service providers to deliver exceptional customer experiences while maximizing operational efficiency through smart routing and location-based services.",
-      image: "/images/flutter.png",
+      image: `${baseUrl}/images/flutter.png`,
       technologies: ["Flutter", "NestJS", "Firebase"],
       github: "https://github.com/johntetteh090/next-change-provider-app",
-      live: "https://drive.google.com/file/d/1mCRAz-lnYAtv-RIYF-b4DjtOd2hAdvpi/view?usp=sharing",
+      live: "https://drive.google.com/file/d/1mCRAz-lnYAtv-RIYF-b4DjtOd2hAdvpi/view?usp=1",
       category: "Fullstack",
       customImages: [
-        "/images/next_change_provider/image1.png",
-        "/images/next_change_provider/image2.png",
-        "/images/next_change_provider/image3.png"
+        `${baseUrl}/images/next_change_provider/image1.png`,
+        `${baseUrl}/images/next_change_provider/image2.png`,
+        `${baseUrl}/images/next_change_provider/image3.png`
       ]
     },
     {
       title: "Green Drive",
       description: "Green Drive is an innovative sustainable transportation platform designed to promote eco-friendly mobility solutions across Africa. The platform connects users with electric vehicle charging stations, promotes carpooling initiatives, and provides real-time data on carbon footprint reduction. Built with modern web technologies, it features interactive maps for charging station locations, user authentication, payment processing for charging services, and comprehensive analytics for environmental impact tracking. The platform aims to accelerate the adoption of green transportation while building a community of environmentally conscious users committed to reducing their carbon footprint.",
-      image: "/images/nextjs.png",
+      image: `${baseUrl}/images/nextjs.png`,
       technologies: ["Next.js", "TypeScript", "Node.js", "Express.js", "MongoDB"],
       github: "https://github.com/johntetteh090/green-drive",
       live: "https://gd-africa.com/",
       category: "Fullstack",
       customImages: [
-        "/images/green_drive/image1.png",
-        "/images/green_drive/image2.png",
-        "/images/green_drive/image3.png",
-        "/images/green_drive/image4.png"
+        `${baseUrl}/images/green_drive/image1.png`,
+        `${baseUrl}/images/green_drive/image2.png`,
+        `${baseUrl}/images/green_drive/image3.png`,
+        `${baseUrl}/images/green_drive/image4.png`
       ]
     },
     {
       title: "Papillion",
       description: "Papillion is a comprehensive creative academy platform designed to nurture and showcase artistic talent. The platform provides a digital space for creative professionals and students to connect, learn, and grow their skills. Built with Next.js for optimal performance and SEO, it features course management systems, portfolio showcases, interactive learning modules, and community engagement tools. The implementation includes robust CI/CD pipelines ensuring reliable deployments and continuous integration for seamless updates. The platform serves as a hub for creative education, fostering collaboration between artists, designers, and creative professionals while providing accessible learning resources for aspiring creatives.",
-      image: "/images/nextjs.png",
+      image: `${baseUrl}/images/nextjs.png`,
       technologies: ["Next.js", "CI/CD"],
       github: "https://github.com/johntetteh090/papillion",
       live: "https://papcreativeacademy.org/",
       category: "Fullstack",
       customImages: [
-        "/images/pappillion/image1.png",
-        "/images/pappillion/image2.png",
-        "/images/pappillion/image3.png"
+        `${baseUrl}/images/pappillion/image1.png`,
+        `${baseUrl}/images/pappillion/image2.png`,
+        `${baseUrl}/images/pappillion/image3.png`
       ]
     },
 

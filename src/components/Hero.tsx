@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { IconArrowRight } from "@tabler/icons-react";
+import { baseUrl } from "@/config/url-route";
 
 export default function Hero() {
   return (
     <section className="relative w-full bg-[#f8f7f2] pt-8 pb-10 overflow-hidden">
       {/* Desktop: image at bottom center */}
-      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[-2.5rem] left-[17%] xl:left-[25%] right-0 z-0">
+      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[-3rem] left-[17%] xl:left-[25%] right-0 z-0">
         <Image
-          src="https://johntetteh090.github.io/portfolio/images/me/me.png"
+          src= {`${baseUrl}/images/me/me.png`}
           alt="Hero background"
           width={600}
           height={700}
@@ -20,7 +21,7 @@ export default function Hero() {
       {/* Mobile: image on top */}
       <div className="block md:hidden w-full flex justify-center">
         <Image
-          src="/images/me/me.png"
+          src= {`${baseUrl}/images/me/me.png`}
           alt="Hero background"
           width={800}
           height={600}
