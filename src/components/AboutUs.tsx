@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { IconCode, IconDeviceMobile, IconRocket, IconUsers, IconBriefcase, IconArrowRight } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function AboutUs() {
   const features = [
@@ -256,15 +257,18 @@ export default function AboutUs() {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Let&apos;s work together to bring your ideas to life. I&apos;m always excited to take on new challenges and create innovative solutions.
             </p>
-            <motion.a
-              href="/portfolio"
-              className="inline-flex items-center gap-3 bg-white text-[#296d6e] px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-200 group"
+            <motion.div
               whileHover={{ y: -5, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>View My Work</span>
-              <IconArrowRight stroke={2} className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </motion.a>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-3 bg-white text-[#296d6e] px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-200 group"
+              >
+                <span>View My Work</span>
+                <IconArrowRight stroke={2} className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { IconArrowRight } from "@tabler/icons-react";
 import { baseUrl } from "@/config/url-route";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -175,21 +176,24 @@ export default function Hero() {
               <div className="w-2 h-2 bg-[#296d6e] rounded-full"></div>
               <span>Full-stack development</span>
             </motion.div>
-            <motion.a
-              href="/about"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#296d6e] hover:text-[#1e4d4e] transition-colors duration-200 group"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5, delay: 1.9, ease: "easeOut" }}
             >
-              <span className="border-b border-[#296d6e] pb-0.5 group-hover:border-[#1e4d4e] transition-colors duration-200">
-                Learn more about me
-              </span>
-              <IconArrowRight
-                stroke={2}
-                className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
-              />
-            </motion.a>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#296d6e] hover:text-[#1e4d4e] transition-colors duration-200 group"
+              >
+                <span className="border-b border-[#296d6e] pb-0.5 group-hover:border-[#1e4d4e] transition-colors duration-200">
+                  Learn more about me
+                </span>
+                <IconArrowRight
+                  stroke={2}
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
+                />
+              </Link>
+            </motion.div>
           </motion.div>
           <motion.div
             className="w-full md:w-[290px] h-0.5 bg-black/10 mt-16 rounded"
@@ -216,18 +220,21 @@ export default function Hero() {
               Explore a selection of projects and case studies that showcase my
               skills in web development, UI/UX, and automation.
             </motion.p>
-            <motion.a
-              href="/portfolio"
-              className="mt-4 inline-flex items-center text-xs lg:text-sm font-bold tracking-widest text-[#296d6e] uppercase hover:gap-3 transition-all duration-200"
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5, delay: 3.0, ease: "easeOut" }}
             >
-              <span className="inline-flex items-center gap-2 border-b-2 border-[#296d6e] pb-0.5">
-                BROWSE PORTFOLIO
-                <IconArrowRight stroke={3} className="w-5 h-5" />
-              </span>
-            </motion.a>
+              <Link
+                href="/portfolio"
+                className="mt-4 inline-flex items-center text-xs lg:text-sm font-bold tracking-widest text-[#296d6e] uppercase hover:gap-3 transition-all duration-200"
+              >
+                <span className="inline-flex items-center gap-2 border-b-2 border-[#296d6e] pb-0.5">
+                  BROWSE PORTFOLIO
+                  <IconArrowRight stroke={3} className="w-5 h-5" />
+                </span>
+              </Link>
+            </motion.div>
             <motion.div
               className="w-full md:w-[290px] h-0.5 bg-black/10 mt-16 rounded"
               initial={{ opacity: 0, scaleX: 0 }}

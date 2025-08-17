@@ -44,7 +44,7 @@ export default function Navbar() {
                 className={`transition-colors duration-200 text-xs lg:text-sm ${
                   isHomePage 
                     ? "text-[#296d6e] font-bold" 
-                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                    : "text-black hover:text-[#296d6e] font-normal"
                 }`}
               >
                 Home
@@ -59,7 +59,7 @@ export default function Navbar() {
                 className={`transition-colors duration-200 text-xs lg:text-sm ${
                   isAboutPage 
                     ? "text-[#296d6e] font-bold" 
-                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                    : "text-black hover:text-[#296d6e] font-normal"
                 }`}
               >
                 About
@@ -74,7 +74,7 @@ export default function Navbar() {
                 className={`transition-colors duration-200 text-xs lg:text-sm ${
                   isPortfolioPage 
                     ? "text-[#296d6e] font-bold" 
-                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                    : "text-black hover:text-[#296d6e] font-normal"
                 }`}
               >
                 Portfolio
@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* Desktop Phone Number */}
           <motion.a
             href="tel:+233558520500"
-            className="hidden md:flex items-center space-x-3 text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal"
+            className="hidden md:flex items-center space-x-3 text-black hover:text-[#296d6e] transition-colors duration-200 font-normal"
             whileHover={{ y: -2 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -121,7 +121,7 @@ export default function Navbar() {
                 className={`block transition-colors duration-200 text-center text-sm ${
                   isHomePage 
                     ? "text-[#296d6e] font-bold" 
-                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                    : "text-black hover:text-[#296d6e] font-normal"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -137,7 +137,7 @@ export default function Navbar() {
                 className={`block transition-colors duration-200 text-center text-sm ${
                   isAboutPage 
                     ? "text-[#296d6e] font-bold" 
-                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                    : "text-black hover:text-[#296d6e] font-normal"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -153,7 +153,7 @@ export default function Navbar() {
                 className={`block transition-colors duration-200 text-center text-sm ${
                   isPortfolioPage 
                     ? "text-[#296d6e] font-bold" 
-                    : "text-[#bfc0bb] hover:text-[#296d6e] font-normal"
+                    : "text-black hover:text-[#296d6e] font-normal"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -162,7 +162,7 @@ export default function Navbar() {
             </motion.div>
             <motion.a
               href="tel:+233558520500"
-              className="flex items-center justify-center space-x-3 text-[#bfc0bb] hover:text-[#296d6e] transition-colors duration-200 font-normal"
+              className="flex items-center justify-center space-x-3 text-black hover:text-[#296d6e] transition-colors duration-200 font-normal"
               onClick={() => setIsMenuOpen(false)}
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
