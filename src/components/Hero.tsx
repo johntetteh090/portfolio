@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-[#f8f7f2] pt-8 pb-10 overflow-hidden">
       {/* Desktop: image at bottom center */}
-      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[0.3] left-[17%] xl:left-[25%] right-0 z-0">
+      <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[-2.3] left-[17%] xl:left-[25%] right-0 z-0">
         <Image
           src="https://johntetteh090.github.io/portfolio/images/me/me.png"
           alt="Hero background"
@@ -31,7 +31,7 @@ export default function Hero() {
       {/* Overlayed text content */}
       <div className="relative z-10 flex flex-col md:flex-row items-stretch w-full max-w-[2600px] ">
         {/* Left: Name/title/subtitle */}
-        <div className="md:w-[50%] xl:w-[60%] relative flex flex-col justify-center md:justify-start md:mt-16 md:items-start md:text-left text-left pl-4 md:pl-[9%] 2xl:pl-[13%] mb-8 z-10 sm:mr-10 lg:mr-0">
+        <div className="md:w-[50%] xl:w-[60%] 2xl:w-[55%] relative flex flex-col justify-center md:justify-start md:mt-16 md:items-start md:text-left text-left pl-4 md:pl-[9%] 2xl:pl-[13%] mb-8 z-10 sm:mr-10 lg:mr-0">
           {/* Green horizontal line */}
           <motion.div
             className="w-24 h-1 bg-[#296d6e] mb-4 "
