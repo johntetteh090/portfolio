@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Desktop: image at bottom center */}
       <div className="hidden md:block absolute bottom-[-9rem] sm:bottom-[-11.5rem] lg:bottom-[-8rem] xl:bottom-[0.001] left-[17%] xl:left-[25%] right-0 z-0">
         <Image
-          src="/images/me/me.png"
+          src="https://johntetteh090.github.io/portfolio/images/me/me.png"
           alt="Hero background"
           width={600}
           height={700}
