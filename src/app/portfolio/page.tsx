@@ -25,7 +25,7 @@ export default function PortfolioPage() {
     },
     {
       title: "MyTrotro",
-      description: "MyTrotro is a comprehensive event booking and travel ticketing app for Ghana. Built with Flutter, it features event discovery, bus ticket booking, secure payments via mobile money, digital QR tickets, real-time notifications, and location services. I used Firebase for OTP SMS to get codes for international numbers, Kafka for caching data, and Provider for state management. Implemented CI/CD pipeline using GitHub Actions with Firebase Distribution for faster app builds, automated testing, and seamless deployment to both Android and iOS platforms. The app streamlines the entire booking process from discovery to ticket validation, making event attendance and travel seamless across Ghana.",
+      description: "MyTrotro is a comprehensive event booking and travel ticketing app for Ghana. Built with React native, it features event discovery, bus ticket booking, secure payments via mobile money, digital QR tickets, real-time notifications, and location services. I used Firebase for OTP SMS to get codes for international numbers, Kafka for caching data, and Provider for state management. Implemented CI/CD pipeline using GitHub Actions with Firebase Distribution for faster app builds, automated testing, and seamless deployment to both Android and iOS platforms. The app streamlines the entire booking process from discovery to ticket validation, making event attendance and travel seamless across Ghana.",
       image: `${baseUrl}/images/reactjs.png`,
       technologies: ["React Native", "Firebase", "Kafka", "PHP Laravel", "CI/CD"],
       github: "https://github.com/johntetteh090/mytrotro",
